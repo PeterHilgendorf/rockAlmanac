@@ -1,0 +1,46 @@
+# SCHEMA: Tour
+# A named concert tour by one Artist. Individual shows are Events
+# (event_type: CONCERT) referencing the tour — add them only when a
+# show is historically significant. Rock Almanac is not setlist.fm.
+
+entity: tour
+fields:
+  id:           {type: slug, required: true, immutable: true}
+  artist_id:    {type: id -> artist, required: true}
+  name:         {type: string, required: true}
+  start_date:      {type: date, required: false}
+  start_precision: {type: enum [day, month, year], required: false}
+  end_date:        {type: date, required: false}
+  end_precision:   {type: enum [day, month, year], required: false}
+  supporting_album_id: {type: id -> album, required: false}
+  regions:      {type: list of strings, required: false, note: "quick summary: North America, Europe, Japan..."}
+  legs:
+    type: list of legs
+    required: false
+    note: "dated, located segments of the tour — the generatable detail layer"
+    item_fields:
+      name:            {type: string, required: false, note: "e.g. 'North American Leg 1'"}
+      start_date:      {type: date, required: true}
+      start_precision: {type: enum [day, month, year], required: true}
+      end_date:        {type: date, required: false}
+      end_precision:   {type: enum [day, month, year], required: false}
+      region:          {type: string, required: true}
+      show_count:      {type: integer, required: false}
+  show_count:   {type: integer, required: false}
+  source_ids:   {type: list of ids -> source, required: true}
+  notes:        {type: text, required: false}
+
+example:
+  id: rumours-tour-1977
+  artist_id: fleetwood-mac
+  name: Rumours Tour
+  start_date: 1977-02-24
+  start_precision: day
+  end_date: 1977-12-03
+  end_precision: month
+  supporting_album_id: rumours-1977
+  regions: [North America, Europe, Oceania]
+  legs:
+    - {name: North America, start_date: 1977-02-24, start_precision: day, end_date: 1977-07-04, end_precision: month, region: North America}
+    - {name: Europe, start_date: 1977-09-13, start_precision: month, end_date: 1977-10-20, end_precision: month, region: Europe}
+  source_ids: [wp-rumours-tour]

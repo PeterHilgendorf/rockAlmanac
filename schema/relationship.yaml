@@ -1,0 +1,35 @@
+# SCHEMA: Relationship
+# A typed link between two entities that isn't a membership.
+# This is what makes the dataset a graph instead of a pile of lists.
+
+entity: relationship
+fields:
+  id:        {type: slug, required: true, immutable: true}
+  rel_type:  {type: enum, required: true, note: "see list below"}
+  from:      {type: entity ref, required: true, note: "format 'entity:id', e.g. 'artist:buckingham-nicks'"}
+  to:        {type: entity ref, required: true}
+  start_date:      {type: date, required: false}
+  start_precision: {type: enum [day, month, year], required: false}
+  end_date:        {type: date, required: false}
+  end_precision:   {type: enum [day, month, year], required: false}
+  source_ids: {type: list of ids -> source, required: true}
+  notes:     {type: text, required: false}
+
+rel_types:
+  - SIDE_PROJECT_OF        # artist -> artist
+  - SPINOFF_OF             # artist -> artist
+  - PRECURSOR_OF           # artist -> artist (Buckingham Nicks -> Fleetwood Mac era)
+  - MARRIED_TO             # person -> person
+  - PARTNER_OF             # person -> person
+  - SIBLING_OF             # person -> person
+  - PARENT_OF              # person -> person
+  - PRODUCED               # person -> album
+  - GUEST_ON               # person -> album
+  - INFLUENCED             # artist -> artist (use sparingly; needs a citable source)
+
+example:
+  id: buckingham-nicks-precursor-fm
+  rel_type: PRECURSOR_OF
+  from: artist:buckingham-nicks
+  to: artist:fleetwood-mac
+  source_ids: [wp-buckingham-nicks]

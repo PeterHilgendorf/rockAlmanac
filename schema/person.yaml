@@ -1,0 +1,33 @@
+# SCHEMA: Person
+# A human being. Band membership lives in membership.yaml, never here —
+# people exist independently of any band they were in.
+
+entity: person
+fields:
+  id:            {type: slug,   required: true, immutable: true}
+  name:          {type: string, required: true, note: "Best-known public name: 'Stevie Nicks'"}
+  sort_name:     {type: string, required: true, note: "'Nicks, Stevie'"}
+  legal_name:    {type: string, required: false}
+  birth_date:       {type: date, required: false}
+  birth_precision:  {type: enum [day, month, year], required: false}
+  birth_place:      {type: string, required: false, note: "City, Region, Country"}
+  death_date:       {type: date, required: false}
+  death_precision:  {type: enum [day, month, year], required: false}
+  death_place:      {type: string, required: false}
+  current_residence: {type: string, required: false, note: "Living persons only. A build check flags any record with both death_date and current_residence."}
+  primary_roles: {type: list of strings, required: false, note: "vocals, guitar, drums, producer..."}
+  musicbrainz_id: {type: string, required: false}
+  wikipedia_url:  {type: url,    required: false}
+  source_ids:    {type: list of ids -> source, required: true}
+  notes:         {type: text, required: false}
+
+example:
+  id: stevie-nicks
+  name: Stevie Nicks
+  sort_name: Nicks, Stevie
+  birth_date: 1948-05-26
+  birth_precision: day
+  birth_place: Phoenix, Arizona, US
+  current_residence: Los Angeles, California, US
+  primary_roles: [vocals, songwriter]
+  source_ids: [mb-stevie-nicks]

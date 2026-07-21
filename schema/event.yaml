@@ -1,0 +1,36 @@
+# SCHEMA: Event
+# A dated moment in history. Events are the backbone of Rock Almanac —
+# "time is the primary organizing principle." Every timeline, narration,
+# and poster is generated from these.
+#
+# Events REFERENCE other entities; they never restate their data.
+# An ALBUM_RELEASE event points at the album record — the release date
+# lives on the album, and the build script derives the event date from it.
+
+entity: event
+fields:
+  id:             {type: slug, required: true, immutable: true}
+  event_type:     {type: enum, required: true, note: "see EVENT_TYPES.md"}
+  date:           {type: date, required: true}
+  date_precision: {type: enum [day, month, year], required: true}
+  artist_ids:     {type: list of ids -> artist, required: false, note: "usually one; multiple for e.g. shared bills"}
+  person_ids:     {type: list of ids -> person, required: false}
+  album_id:       {type: id -> album,  required: false}
+  tour_id:        {type: id -> tour,   required: false}
+  venue_id:       {type: id -> venue,  required: false}
+  headline:       {type: string, required: true, note: "one-line summary, present tense: 'Peter Green leaves Fleetwood Mac'"}
+  description:    {type: text, required: false, note: "editorial paragraph — this is where the writing lives"}
+  significance:   {type: enum [major, notable, minor], required: true, note: "lets outputs filter: posters show major only"}
+  source_ids:     {type: list of ids -> source, required: true}
+  notes:          {type: text, required: false}
+
+example:
+  id: fleetwood-mac-buckingham-nicks-join-1974
+  event_type: MEMBER_JOIN
+  date: 1974-12-31
+  date_precision: day
+  artist_ids: [fleetwood-mac]
+  person_ids: [lindsey-buckingham, stevie-nicks]
+  headline: Lindsey Buckingham and Stevie Nicks join Fleetwood Mac
+  significance: major
+  source_ids: [wp-fleetwood-mac]

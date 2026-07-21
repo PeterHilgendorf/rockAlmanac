@@ -1,0 +1,33 @@
+# SCHEMA: Membership
+# One continuous stint of one Person in one Artist.
+# A member who leaves and returns gets a SECOND membership record.
+# This is the single most important design decision in Rock Almanac:
+# it's what makes personnel timelines generatable.
+
+entity: membership
+fields:
+  id:          {type: slug, required: true, immutable: true, note: "e.g. lindsey-buckingham-fleetwood-mac-1"}
+  person_id:   {type: id -> person, required: true}
+  artist_id:   {type: id -> artist, required: true}
+  founding:    {type: boolean, required: true, note: "true = original member. Usually start_date equals the artist's formed_date, but this flag settles the edge cases (e.g. joined two weeks after formation, pre-fame lineups) explicitly. Powers the 'last surviving original member' computation."}
+  roles:       {type: list of strings, required: true, note: "roles held DURING THIS STINT"}
+  start_date:      {type: date, required: true}
+  start_precision: {type: enum [day, month, year], required: true}
+  end_date:        {type: date, required: false, note: "omit if current member"}
+  end_precision:   {type: enum [day, month, year], required: false}
+  exit_reason: {type: enum [fired, quit, died, band_dissolved, lineup_change, other], required: false}
+  source_ids:  {type: list of ids -> source, required: true}
+  notes:       {type: text, required: false}
+
+example:
+  id: lindsey-buckingham-fleetwood-mac-1
+  person_id: lindsey-buckingham
+  artist_id: fleetwood-mac
+  founding: false
+  roles: [guitar, vocals]
+  start_date: 1974-12-31
+  start_precision: month
+  end_date: 1987-08-01
+  end_precision: month
+  exit_reason: quit
+  source_ids: [wp-fleetwood-mac]

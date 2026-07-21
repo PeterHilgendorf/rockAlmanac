@@ -1,0 +1,33 @@
+# SCHEMA: Artist
+# A band or solo performing act. A solo artist is an Artist whose lineup
+# happens to be one Person — the Person record holds the human facts.
+
+entity: artist
+fields:
+  id:            {type: slug,   required: true,  immutable: true}
+  name:          {type: string, required: true,  note: "Current/final public name"}
+  sort_name:     {type: string, required: true,  note: "e.g. 'Fleetwood Mac', 'Talking Heads' — drop leading 'The' for sorting"}
+  former_names:  {type: list of strings, required: false, note: "Name changes get a NAME_CHANGE event too"}
+  formed_date:       {type: date, required: false}
+  formed_precision:  {type: enum [day, month, year], required: false}
+  formed_location:   {type: string, required: false, note: "City, Country"}
+  disbanded_date:      {type: date, required: false}
+  disbanded_precision: {type: enum [day, month, year], required: false}
+  status:        {type: enum [active, disbanded, hiatus, reunited], required: true}
+  genres:        {type: list of strings, required: false}
+  musicbrainz_id: {type: string, required: false}
+  discogs_id:     {type: string, required: false}
+  wikipedia_url:  {type: url,    required: false}
+  source_ids:    {type: list of ids -> source, required: true}
+  notes:         {type: text, required: false}
+
+example:
+  id: fleetwood-mac
+  name: Fleetwood Mac
+  sort_name: Fleetwood Mac
+  formed_date: 1967-07-01
+  formed_precision: month
+  formed_location: London, England
+  status: active
+  genres: [blues rock, pop rock, soft rock]
+  source_ids: [mb-fleetwood-mac, wp-fleetwood-mac]

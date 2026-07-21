@@ -1,0 +1,39 @@
+# SCHEMA: Album
+# One release by one Artist. Reissues/remasters are notes or separate
+# records only when editorially significant — Rock Almanac is a reference
+# work, not a pressing catalog (that's Discogs' job).
+
+entity: album
+fields:
+  id:            {type: slug, required: true, immutable: true, note: "title-year: rumours-1977"}
+  artist_id:     {type: id -> artist, required: true}
+  title:         {type: string, required: true}
+  release_date:      {type: date, required: true}
+  release_precision: {type: enum [day, month, year], required: true}
+  album_type:    {type: enum [studio, live, compilation, ep, soundtrack], required: true}
+  label:         {type: string, required: false}
+  producers:     {type: list of ids -> person OR strings, required: false}
+  recorded_at:   {type: list of strings, required: false, note: "studio names"}
+  peak_position: {type: integer OR "none", required: false, note: "HEADLINE stat: best position on the artist's primary chart (US Billboard 200 unless noted). The literal string \"none\" means charted nowhere ('N/A' in outputs). Field omitted entirely means unknown/unresearched — those are different facts."}
+  peak_chart:    {type: string, required: false, note: "which chart peak_position refers to; default 'US Billboard 200'"}
+  debut_position: {type: integer, required: false, note: "first-week chart entry position, when known"}
+  chart_peaks:   {type: map, required: false, note: "full per-country detail, e.g. {US: 1, UK: 1}"}
+  certifications: {type: list of strings, required: false, note: "e.g. 'RIAA 20x Platinum'"}
+  musicbrainz_id: {type: string, required: false}
+  discogs_id:     {type: string, required: false}
+  source_ids:    {type: list of ids -> source, required: true}
+  notes:         {type: text, required: false}
+
+example:
+  id: rumours-1977
+  artist_id: fleetwood-mac
+  title: Rumours
+  release_date: 1977-02-04
+  release_precision: day
+  album_type: studio
+  label: Warner Bros.
+  peak_position: 1
+  peak_chart: US Billboard 200
+  debut_position: 10
+  chart_peaks: {US: 1, UK: 1}
+  source_ids: [mb-rumours, wp-rumours]

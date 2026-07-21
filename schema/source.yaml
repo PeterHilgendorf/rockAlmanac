@@ -1,0 +1,27 @@
+# SCHEMA: Source
+# Where a fact came from. Every other entity requires at least one
+# source_id. This is what makes Rock Almanac a reference work.
+
+entity: source
+fields:
+  id:          {type: slug, required: true, immutable: true, note: "prefix by kind: mb-, dg-, wp-, book-, art-, int-"}
+  source_type: {type: enum [musicbrainz, discogs, wikipedia, wikidata, book, article, liner_notes, interview, documentary, website, other], required: true}
+  title:       {type: string, required: true}
+  author:      {type: string, required: false}
+  publisher:   {type: string, required: false}
+  year:        {type: integer, required: false}
+  url:         {type: url, required: false}
+  isbn:        {type: string, required: false}
+  accessed_date: {type: date, required: false, note: "required for web sources"}
+  reliability: {type: enum [primary, secondary, tertiary], required: true, note: "liner notes = primary; Wikipedia = tertiary"}
+  notes:       {type: text, required: false}
+
+example:
+  id: book-mick-fleetwood-play-on
+  source_type: book
+  title: "Play On: Now, Then, and Fleetwood Mac"
+  author: Mick Fleetwood with Anthony Bozza
+  publisher: Little, Brown
+  year: 2014
+  isbn: "9780316403429"
+  reliability: primary

@@ -1,0 +1,26 @@
+# SCHEMA: Track
+# One track on one Album. Optional in early phases — an artist is valid
+# without track data. Add tracks when discography depth matters.
+
+entity: track
+fields:
+  id:          {type: slug, required: true, immutable: true, note: "album-id--track-slug"}
+  album_id:    {type: id -> album, required: true}
+  title:       {type: string, required: true}
+  position:    {type: integer, required: true}
+  duration:    {type: string, required: false, note: "M:SS"}
+  writer_ids:  {type: list of ids -> person, required: false}
+  lead_vocal_ids: {type: list of ids -> person, required: false}
+  single:      {type: boolean, required: false}
+  source_ids:  {type: list of ids -> source, required: true}
+  notes:       {type: text, required: false}
+
+example:
+  id: rumours-1977--dreams
+  album_id: rumours-1977
+  title: Dreams
+  position: 2
+  duration: "4:14"
+  writer_ids: [stevie-nicks]
+  single: true
+  source_ids: [mb-rumours]
