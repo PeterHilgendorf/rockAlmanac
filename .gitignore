@@ -3,3 +3,8 @@
 #recycle/
 Thumbs.db
 .secrets/
+
+# Rendered audio and ElevenLabs Studio exports — large, regenerable.
+*.mp3
+*.wav
+audio/output/

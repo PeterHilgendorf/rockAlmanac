@@ -97,8 +97,19 @@ a separate editor — optional, and done outside ElevenLabs.
 
 ## Prefer to automate it?
 
-If you'd rather not click through Studio, I can add a small
-`scripts/render_audio.py` that sends the `.elevenlabs.txt` to the
-ElevenLabs API with these settings and writes the MP3 in one command.
-Just say the word (you'll need an API key in `.secrets/`, like the
-Setlist.fm one).
+`scripts/render_audio.py` sends any `.elevenlabs.txt` to the ElevenLabs
+API with the settings above and writes the MP3 in one command. It reads
+the key from `.secrets/elevenlabs.key`.
+
+```
+python3 scripts/render_audio.py --list-voices                  # pick a voice
+python3 scripts/render_audio.py audio/<name>.elevenlabs.txt --dry-run
+python3 scripts/render_audio.py audio/<name>.elevenlabs.txt --test   # 1 chunk
+python3 scripts/render_audio.py audio/<name>.elevenlabs.txt          # full MP3
+```
+
+It splits the script into request-sized chunks at paragraph boundaries,
+keeps prosody continuous across the seams (`previous_text`/`next_text`),
+and stitches the audio into one file. Change the voice with `--voice <id>`;
+the sleep-tuned settings (Multilingual v2, speed 0.8, high stability,
+style 0) live at the top of the script.
