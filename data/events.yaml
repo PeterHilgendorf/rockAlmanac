@@ -77,7 +77,7 @@
   date: 1969-01-01
   date_precision: month
   artist_ids: [fleetwood-mac]
-  headline: Instrumental "Albatross" reaches UK #1
+  headline: 'Instrumental "Albatross" reaches UK #1'
   description: >
     Peter Green's serene instrumental becomes the band's only UK
     number-one single — an unlikely feat for a blues band.
@@ -250,7 +250,7 @@
   date_precision: day
   artist_ids: [fleetwood-mac]
   album_id: fleetwood-mac-1975
-  headline: Fleetwood Mac reaches US #1 over a year after release
+  headline: "Fleetwood Mac reaches US #1 over a year after release"
   significance: major
   source_ids: [wp-fleetwood-mac, wp-billboard-200-number-ones-1976]
 
@@ -260,7 +260,7 @@
   date_precision: day
   artist_ids: [fleetwood-mac]
   album_id: rumours-1977
-  headline: Rumours hits US #1 and stays there
+  headline: "Rumours hits US #1 and stays there"
   description: >
     The album logs 31 non-consecutive weeks at the top of the Billboard
     200 on its way to becoming one of the best-selling records ever

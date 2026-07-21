@@ -1,0 +1,174 @@
+# Rock Almanac — GENERATED events. DO NOT EDIT.
+# Produced by scripts/build_events.py from data/albums.yaml and
+# data/tours.yaml. Edit those records, then re-run the script.
+# ALBUM_RELEASE / TOUR_START / TOUR_END are derived here on purpose:
+# their dates live on the album and tour records, not restated by hand.
+
+- id: album-release-fleetwood-mac-1968
+  event_type: ALBUM_RELEASE
+  date: '1968-02-24'
+  date_precision: day
+  artist_ids:
+  - fleetwood-mac
+  album_id: fleetwood-mac-1968
+  headline: Fleetwood Mac release Fleetwood Mac
+  significance: notable
+  source_ids:
+  - wp-fleetwood-mac-discography
+  - mb-fleetwood-mac
+- id: album-release-mr-wonderful-1968
+  event_type: ALBUM_RELEASE
+  date: '1968-08-23'
+  date_precision: day
+  artist_ids:
+  - fleetwood-mac
+  album_id: mr-wonderful-1968
+  headline: Fleetwood Mac release Mr. Wonderful
+  significance: notable
+  source_ids:
+  - wp-fleetwood-mac-discography
+  - mb-fleetwood-mac
+- id: album-release-then-play-on-1969
+  event_type: ALBUM_RELEASE
+  date: '1969-09-19'
+  date_precision: day
+  artist_ids:
+  - fleetwood-mac
+  album_id: then-play-on-1969
+  headline: Fleetwood Mac release Then Play On
+  significance: notable
+  source_ids:
+  - wp-fleetwood-mac-discography
+  - mb-fleetwood-mac
+- id: album-release-kiln-house-1970
+  event_type: ALBUM_RELEASE
+  date: '1970-09-18'
+  date_precision: day
+  artist_ids:
+  - fleetwood-mac
+  album_id: kiln-house-1970
+  headline: Fleetwood Mac release Kiln House
+  significance: minor
+  source_ids:
+  - wp-fleetwood-mac-discography
+  - mb-fleetwood-mac
+- id: album-release-future-games-1971
+  event_type: ALBUM_RELEASE
+  date: '1971-09-03'
+  date_precision: day
+  artist_ids:
+  - fleetwood-mac
+  album_id: future-games-1971
+  headline: Fleetwood Mac release Future Games
+  significance: minor
+  source_ids:
+  - wp-fleetwood-mac-discography
+  - mb-fleetwood-mac
+- id: album-release-bare-trees-1972
+  event_type: ALBUM_RELEASE
+  date: '1972-03-01'
+  date_precision: month
+  artist_ids:
+  - fleetwood-mac
+  album_id: bare-trees-1972
+  headline: Fleetwood Mac release Bare Trees
+  significance: minor
+  source_ids:
+  - wp-fleetwood-mac-discography
+  - mb-fleetwood-mac
+- id: album-release-penguin-1973
+  event_type: ALBUM_RELEASE
+  date: '1973-03-01'
+  date_precision: month
+  artist_ids:
+  - fleetwood-mac
+  album_id: penguin-1973
+  headline: Fleetwood Mac release Penguin
+  significance: minor
+  source_ids:
+  - wp-fleetwood-mac-discography
+  - mb-fleetwood-mac
+- id: album-release-buckingham-nicks-1973
+  event_type: ALBUM_RELEASE
+  date: '1973-09-05'
+  date_precision: day
+  artist_ids:
+  - buckingham-nicks
+  album_id: buckingham-nicks-1973
+  headline: Buckingham Nicks release Buckingham Nicks
+  significance: minor
+  source_ids:
+  - wp-buckingham-nicks
+  - mb-buckingham-nicks
+- id: album-release-mystery-to-me-1973
+  event_type: ALBUM_RELEASE
+  date: '1973-10-15'
+  date_precision: day
+  artist_ids:
+  - fleetwood-mac
+  album_id: mystery-to-me-1973
+  headline: Fleetwood Mac release Mystery to Me
+  significance: minor
+  source_ids:
+  - wp-fleetwood-mac-discography
+  - mb-fleetwood-mac
+- id: album-release-heroes-are-hard-to-find-1974
+  event_type: ALBUM_RELEASE
+  date: '1974-09-13'
+  date_precision: day
+  artist_ids:
+  - fleetwood-mac
+  album_id: heroes-are-hard-to-find-1974
+  headline: Fleetwood Mac release Heroes Are Hard to Find
+  significance: notable
+  source_ids:
+  - wp-fleetwood-mac-discography
+  - mb-fleetwood-mac
+- id: album-release-fleetwood-mac-1975
+  event_type: ALBUM_RELEASE
+  date: '1975-07-11'
+  date_precision: day
+  artist_ids:
+  - fleetwood-mac
+  album_id: fleetwood-mac-1975
+  headline: Fleetwood Mac release Fleetwood Mac
+  significance: major
+  source_ids:
+  - wp-fleetwood-mac-discography
+  - mb-fleetwood-mac
+- id: album-release-rumours-1977
+  event_type: ALBUM_RELEASE
+  date: '1977-02-04'
+  date_precision: day
+  artist_ids:
+  - fleetwood-mac
+  album_id: rumours-1977
+  headline: Fleetwood Mac release Rumours
+  significance: major
+  source_ids:
+  - wp-rumours
+  - mb-fleetwood-mac
+- id: tour-start-rumours-tour-1977
+  event_type: TOUR_START
+  date: '1977-02-24'
+  date_precision: day
+  artist_ids:
+  - fleetwood-mac
+  tour_id: rumours-tour-1977
+  headline: Fleetwood Mac begin the Rumours Tour
+  significance: major
+  source_ids:
+  - wp-rumours-tour
+  - sf-fleetwood-mac
+- id: tour-end-rumours-tour-1977
+  event_type: TOUR_END
+  date: '1978-08-30'
+  date_precision: day
+  artist_ids:
+  - fleetwood-mac
+  tour_id: rumours-tour-1977
+  headline: The Rumours Tour comes to an end
+  significance: major
+  source_ids:
+  - wp-rumours-tour
+  - sf-fleetwood-mac

@@ -95,6 +95,28 @@ def load_event_types():
 
 # ---------------------------------------------------------------- data
 
+# A value like `headline: Rumours hits US #1` silently loses everything
+# from '#' onward — YAML reads it as a comment. The '#' is gone by the
+# time the file is parsed, so this has to scan the raw text. It only
+# looks at same-line `key: value` scalars, so block scalars (notes: >),
+# where '#' is literal, never match.
+_INLINE_SCALAR = re.compile(r"^\s*(?:- )?[\w-]+:\s+(?P<val>\S.*)$")
+
+
+def check_raw_comment_traps(fname, text):
+    for i, line in enumerate(text.splitlines(), 1):
+        m = _INLINE_SCALAR.match(line)
+        if not m:
+            continue
+        val = m.group("val")
+        if val[0] in "'\"|>[{":  # quoted, block, or flow — '#' is safe
+            continue
+        if " #" in val:
+            err("%s line %d: ' #' in an unquoted value starts a YAML "
+                "comment and truncates it — quote the value: %s"
+                % (fname, i, line.strip()))
+
+
 def load_data():
     data = {}
     for entity, fname in DATA_FILES.items():
@@ -102,7 +124,9 @@ def load_data():
         if not path.exists():
             data[entity] = []
             continue
-        doc = yaml.safe_load(path.read_text())
+        text = path.read_text()
+        check_raw_comment_traps(fname, text)
+        doc = yaml.safe_load(text)
         if doc is None:
             doc = []
         if not isinstance(doc, list):

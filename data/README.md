@@ -7,6 +7,17 @@ to the definitions in [../schema/](../schema/). Validate with:
 python3 scripts/validate.py
 ```
 
+Then generate the derived events and the timeline:
+
+```
+python3 scripts/build_events.py
+```
+
+This reads `albums.yaml` and `tours.yaml` and writes
+[../build/](../build/): the `ALBUM_RELEASE` / `TOUR_START` / `TOUR_END`
+events (which must never be hand-entered) plus a merged, chronological
+`timeline.md`. Run `validate.py` before `build_events.py`.
+
 | File | Entity |
 |---|---|
 | sources.yaml | source |

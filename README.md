@@ -20,12 +20,12 @@ data.
 |---|---|
 | [schema/](schema/) | The contract with the data: ten entity definitions, conventions, and the event-type vocabulary. Start here. |
 | [data/](data/) | The dataset — one YAML file per entity. Fleetwood Mac is the reference dataset. |
-| [scripts/](scripts/) | Tooling. `validate.py` checks every record in data/ against the schema. |
-
-Importers and build scripts will land alongside as they take shape.
+| [scripts/](scripts/) | Tooling: `validate.py` checks every record against the schema; `build_events.py` generates derived events and the timeline. |
+| [build/](build/) | Generated output — derived events and the merged timeline. Never hand-edited. |
 
 ```
-python3 scripts/validate.py
+python3 scripts/validate.py       # check the data against the schema
+python3 scripts/build_events.py   # generate build/ from the data
 ```
 
 ## Reference dataset
