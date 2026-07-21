@@ -1,30 +1,40 @@
 {
-  "artist": "Fleetwood Mac",
+  "collection": "fleetwood-mac",
+  "title": "Fleetwood Mac",
+  "subtitle": "1967 – 2022",
   "generated_at": "2026-07-21",
   "eras": [
     {
       "slug": "blues",
       "label": "The Blues Era",
       "from": 1967,
-      "to": 1970
+      "to": 1970,
+      "accent": "#7fa6c9",
+      "ground": "#0a0d13"
     },
     {
       "slug": "transition",
       "label": "The Transition",
       "from": 1971,
-      "to": 1974
+      "to": 1974,
+      "accent": "#cc9a55",
+      "ground": "#120f0a"
     },
     {
       "slug": "classic",
       "label": "The Rumours Era",
       "from": 1975,
-      "to": 1987
+      "to": 1987,
+      "accent": "#d3968f",
+      "ground": "#140f0e"
     },
     {
       "slug": "legacy",
       "label": "The Legacy Years",
       "from": 1988,
-      "to": 2100
+      "to": 2100,
+      "accent": "#9fa8b0",
+      "ground": "#0f1012"
     }
   ],
   "events": [

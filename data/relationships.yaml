@@ -27,3 +27,17 @@
     A couple from the early 1970s; their breakup during the Rumours
     sessions is written all over the album. Start date pending a
     citable source.
+
+# ---- The Runaways ----------------------------------------------------
+
+- id: kim-fowley-produced-the-runaways-1976
+  rel_type: PRODUCED
+  from: person:kim-fowley
+  to: album:the-runaways-1976
+  source_ids: [wp-the-runaways, wp-kim-fowley]
+
+- id: kim-fowley-produced-queens-of-noise-1977
+  rel_type: PRODUCED
+  from: person:kim-fowley
+  to: album:queens-of-noise-1977
+  source_ids: [wp-the-runaways, wp-kim-fowley]

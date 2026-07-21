@@ -1,8 +1,5 @@
 # Rock Almanac — GENERATED events. DO NOT EDIT.
-# Produced by scripts/build_events.py from data/albums.yaml and
-# data/tours.yaml. Edit those records, then re-run the script.
-# ALBUM_RELEASE / TOUR_START / TOUR_END are derived here on purpose:
-# their dates live on the album and tour records, not restated by hand.
+# Produced by scripts/build_events.py from album and tour records.
 
 - id: album-release-fleetwood-mac-1968
   event_type: ALBUM_RELEASE

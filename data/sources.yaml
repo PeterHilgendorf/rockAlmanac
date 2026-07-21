@@ -185,3 +185,68 @@
     MusicBrainz artist ID. Used to cross-confirm the Rumours Tour date
     range: 117 shows tagged with that tour, spanning 24 Feb 1977 to
     30 Aug 1978.
+
+# ---- The Runaways (added 2026-07-21) --------------------------------
+
+- id: wp-the-runaways
+  source_type: wikipedia
+  title: The Runaways
+  url: https://en.wikipedia.org/wiki/The_Runaways
+  accessed_date: 2026-07-21
+  reliability: tertiary
+
+- id: wp-joan-jett
+  source_type: wikipedia
+  title: Joan Jett
+  url: https://en.wikipedia.org/wiki/Joan_Jett
+  accessed_date: 2026-07-21
+  reliability: tertiary
+
+- id: wp-lita-ford
+  source_type: wikipedia
+  title: Lita Ford
+  url: https://en.wikipedia.org/wiki/Lita_Ford
+  accessed_date: 2026-07-21
+  reliability: tertiary
+
+- id: wp-cherie-currie
+  source_type: wikipedia
+  title: Cherie Currie
+  url: https://en.wikipedia.org/wiki/Cherie_Currie
+  accessed_date: 2026-07-21
+  reliability: tertiary
+
+- id: wp-sandy-west
+  source_type: wikipedia
+  title: Sandy West
+  url: https://en.wikipedia.org/wiki/Sandy_West
+  accessed_date: 2026-07-21
+  reliability: tertiary
+
+- id: wp-jackie-fox
+  source_type: wikipedia
+  title: Jackie Fox (musician)
+  url: https://en.wikipedia.org/wiki/Jackie_Fox
+  accessed_date: 2026-07-21
+  reliability: tertiary
+
+- id: wp-kim-fowley
+  source_type: wikipedia
+  title: Kim Fowley
+  url: https://en.wikipedia.org/wiki/Kim_Fowley
+  accessed_date: 2026-07-21
+  reliability: tertiary
+
+- id: mb-the-runaways
+  source_type: musicbrainz
+  title: The Runaways — MusicBrainz artist entry
+  url: https://musicbrainz.org/artist/ded0d67a-eb71-4fe9-83c0-1d18b8ed497e
+  accessed_date: 2026-07-21
+  reliability: tertiary
+
+- id: dg-the-runaways
+  source_type: discogs
+  title: The Runaways — Discogs artist entry
+  url: https://www.discogs.com/artist/242611
+  accessed_date: 2026-07-21
+  reliability: tertiary

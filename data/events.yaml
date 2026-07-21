@@ -441,3 +441,164 @@
   headline: Christine McVie dies at 79
   significance: major
   source_ids: [wp-christine-mcvie]
+
+# ====================================================================
+# THE RUNAWAYS
+# ALBUM_RELEASE / TOUR_START / TOUR_END are generated, never hand-entered.
+# ====================================================================
+
+- id: the-runaways-formation-1975
+  event_type: FORMATION
+  date: 1975-08-01
+  date_precision: month
+  artist_ids: [the-runaways]
+  person_ids: [joan-jett, sandy-west, kim-fowley]
+  headline: Kim Fowley assembles the Runaways in Los Angeles
+  description: >
+    Producer Kim Fowley, wanting an all-teenage-girl rock band, connects
+    guitarist Joan Jett with drummer Sandy West, and the Runaways begin
+    to take shape through auditions across Los Angeles.
+  significance: major
+  source_ids: [wp-the-runaways]
+
+- id: the-runaways-currie-joins-1975
+  event_type: MEMBER_JOIN
+  date: 1975-12-01
+  date_precision: month
+  artist_ids: [the-runaways]
+  person_ids: [cherie-currie]
+  headline: Fifteen-year-old Cherie Currie becomes the lead singer
+  description: >
+    Spotted at a Los Angeles teen club, Currie completes the classic
+    lineup alongside Jett, West, Lita Ford, and bassist Jackie Fox.
+  significance: major
+  source_ids: [wp-the-runaways, wp-cherie-currie]
+
+- id: the-runaways-japan-mania-1977
+  event_type: PRESS_MILESTONE
+  date: 1977-06-01
+  date_precision: month
+  artist_ids: [the-runaways]
+  headline: The Runaways are mobbed like Beatlemania in Japan
+  description: >
+    On tour in Japan in the summer of 1977 the band find themselves
+    genuine teen idols, greeted by screaming crowds — their high-water
+    mark of fame, and the source of the Live in Japan album.
+  significance: major
+  source_ids: [wp-the-runaways]
+
+- id: the-runaways-fox-exit-1977
+  event_type: MEMBER_EXIT
+  date: 1977-06-01
+  date_precision: month
+  artist_ids: [the-runaways]
+  person_ids: [jackie-fox]
+  headline: Jackie Fox leaves the band after the Japan tour
+  significance: notable
+  source_ids: [wp-the-runaways, wp-jackie-fox]
+
+- id: the-runaways-currie-exit-1977
+  event_type: MEMBER_EXIT
+  date: 1977-08-01
+  date_precision: month
+  artist_ids: [the-runaways]
+  person_ids: [cherie-currie]
+  headline: Cherie Currie quits; Joan Jett takes over lead vocals
+  description: >
+    Worn down by the pace and the friction, Currie leaves for a solo
+    career, and Joan Jett steps up to sing lead for the band's remaining
+    records.
+  significance: major
+  source_ids: [wp-the-runaways, wp-cherie-currie]
+
+- id: the-runaways-breakup-1979
+  event_type: BREAKUP
+  date: 1979-04-01
+  date_precision: month
+  artist_ids: [the-runaways]
+  person_ids: [joan-jett, lita-ford, sandy-west]
+  headline: The Runaways break up
+  description: >
+    After four years and disputes over musical direction, the band
+    dissolve — Joan Jett and Lita Ford heading toward solo careers that
+    would eclipse the group.
+  significance: major
+  source_ids: [wp-the-runaways]
+
+# ---- Afterlives ------------------------------------------------------
+
+- id: cherie-currie-foxes-1980
+  event_type: FILM
+  date: 1980-01-01
+  date_precision: year
+  person_ids: [cherie-currie]
+  headline: Cherie Currie co-stars in the film Foxes
+  significance: minor
+  source_ids: [wp-cherie-currie]
+
+- id: joan-jett-i-love-rock-n-roll-number-one-1982
+  event_type: CHART_MILESTONE
+  date: 1982-03-01
+  date_precision: month
+  person_ids: [joan-jett]
+  headline: "Joan Jett's \"I Love Rock 'n' Roll\" tops the US chart for seven weeks"
+  description: >
+    With her band the Blackhearts, the Runaways' co-founder scores one
+    of the defining hits of the decade — a far bigger success than the
+    Runaways ever had.
+  significance: major
+  source_ids: [wp-joan-jett]
+
+- id: lita-ford-close-my-eyes-forever-1989
+  event_type: CHART_MILESTONE
+  date: 1989-01-01
+  date_precision: year
+  person_ids: [lita-ford]
+  headline: "Lita Ford's \"Close My Eyes Forever\" reaches the US top ten"
+  description: >
+    A duet with Ozzy Osbourne becomes the biggest hit of Ford's solo
+    hard-rock career, reaching number eight.
+  significance: notable
+  source_ids: [wp-lita-ford]
+
+- id: cherie-currie-neon-angel-1989
+  event_type: PRESS_MILESTONE
+  date: 1989-01-01
+  date_precision: year
+  person_ids: [cherie-currie]
+  headline: Cherie Currie publishes her memoir Neon Angel
+  significance: minor
+  source_ids: [wp-cherie-currie]
+
+- id: sandy-west-death-2006
+  event_type: DEATH
+  date: 2006-10-21
+  date_precision: day
+  person_ids: [sandy-west]
+  headline: Sandy West dies at 47
+  description: The founding drummer dies of lung cancer.
+  significance: major
+  source_ids: [wp-sandy-west]
+
+- id: the-runaways-film-2010
+  event_type: FILM
+  date: 2010-03-01
+  date_precision: month
+  artist_ids: [the-runaways]
+  person_ids: [joan-jett, cherie-currie]
+  headline: A biopic, The Runaways, brings the band to a new generation
+  description: >
+    The film, with Kristen Stewart as Joan Jett and Dakota Fanning as
+    Cherie Currie, draws on Currie's memoir and revives interest in the
+    band decades after they split.
+  significance: notable
+  source_ids: [wp-the-runaways, wp-cherie-currie]
+
+- id: kim-fowley-death-2015
+  event_type: DEATH
+  date: 2015-01-15
+  date_precision: day
+  person_ids: [kim-fowley]
+  headline: Kim Fowley dies at 75
+  significance: notable
+  source_ids: [wp-kim-fowley]

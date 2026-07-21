@@ -22,3 +22,15 @@
     count. Kept at 96 pending a primary source. Five legs per
     Wikipedia — three North American plus Europe and Japan/Oceania;
     leg-level breakdown still to be entered.
+
+- id: japan-tour-1977
+  artist_id: the-runaways
+  name: Japan Tour
+  start_date: 1977-06-01
+  start_precision: month
+  supporting_album_id: queens-of-noise-1977
+  regions: [Japan]
+  source_ids: [wp-the-runaways]
+  notes: >
+    A brief but frenzied tour; the band were mobbed like a teenage
+    Beatlemania and it produced the Live in Japan album.

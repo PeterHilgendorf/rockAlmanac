@@ -233,3 +233,106 @@
   end_precision: day
   exit_reason: band_dissolved
   source_ids: [wp-buckingham-nicks]
+
+# ---- The Runaways ----------------------------------------------------
+
+- id: sandy-west-the-runaways-1
+  person_id: sandy-west
+  artist_id: the-runaways
+  founding: true
+  roles: [drums, vocals]
+  start_date: 1975-08-01
+  start_precision: month
+  end_date: 1979-04-01
+  end_precision: month
+  exit_reason: band_dissolved
+  source_ids: [wp-the-runaways, wp-sandy-west]
+
+- id: joan-jett-the-runaways-1
+  person_id: joan-jett
+  artist_id: the-runaways
+  founding: true
+  roles: [rhythm guitar, vocals]
+  start_date: 1975-08-01
+  start_precision: month
+  end_date: 1979-04-01
+  end_precision: month
+  exit_reason: band_dissolved
+  source_ids: [wp-the-runaways, wp-joan-jett]
+
+- id: micki-steele-the-runaways-1
+  person_id: micki-steele
+  artist_id: the-runaways
+  founding: true
+  roles: [bass, vocals]
+  start_date: 1975-08-01
+  start_precision: month
+  end_date: 1975-10-01
+  end_precision: month
+  exit_reason: lineup_change
+  source_ids: [wp-the-runaways]
+  notes: The band's first bassist and singer; left over creative differences.
+
+- id: peggy-foster-the-runaways-1
+  person_id: peggy-foster
+  artist_id: the-runaways
+  founding: false
+  roles: [bass]
+  start_date: 1975-11-01
+  start_precision: month
+  end_date: 1975-11-01
+  end_precision: month
+  exit_reason: lineup_change
+  source_ids: [wp-the-runaways]
+  notes: In the band for about two weeks.
+
+- id: lita-ford-the-runaways-1
+  person_id: lita-ford
+  artist_id: the-runaways
+  founding: false
+  roles: [lead guitar, vocals]
+  start_date: 1975-09-01
+  start_precision: month
+  end_date: 1979-04-01
+  end_precision: month
+  exit_reason: band_dissolved
+  source_ids: [wp-the-runaways, wp-lita-ford]
+  notes: Joined in the early auditions, autumn 1975.
+
+- id: cherie-currie-the-runaways-1
+  person_id: cherie-currie
+  artist_id: the-runaways
+  founding: false
+  roles: [vocals]
+  start_date: 1975-12-01
+  start_precision: month
+  end_date: 1977-08-01
+  end_precision: month
+  exit_reason: quit
+  source_ids: [wp-the-runaways, wp-cherie-currie]
+
+- id: jackie-fox-the-runaways-1
+  person_id: jackie-fox
+  artist_id: the-runaways
+  founding: false
+  roles: [bass]
+  start_date: 1975-12-01
+  start_precision: month
+  end_date: 1977-06-01
+  end_precision: month
+  exit_reason: quit
+  source_ids: [wp-the-runaways, wp-jackie-fox]
+  notes: Left after the Japan tour.
+
+- id: vicki-blue-the-runaways-1
+  person_id: vicki-blue
+  artist_id: the-runaways
+  founding: false
+  roles: [bass]
+  start_date: 1977-07-01
+  start_precision: month
+  end_date: 1979-04-01
+  end_precision: month
+  exit_reason: band_dissolved
+  source_ids: [wp-the-runaways]
+  notes: Replaced Jackie Fox.

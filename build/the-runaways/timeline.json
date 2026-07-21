@@ -1,0 +1,270 @@
+{
+  "collection": "the-runaways",
+  "title": "The Runaways",
+  "subtitle": "1975 – 1979",
+  "generated_at": "2026-07-21",
+  "eras": [
+    {
+      "slug": "assembly",
+      "label": "The Assembly",
+      "from": 1975,
+      "to": 1975,
+      "accent": "#e0563b",
+      "ground": "#150a08"
+    },
+    {
+      "slug": "ascent",
+      "label": "Queens of Noise",
+      "from": 1976,
+      "to": 1977,
+      "accent": "#e6467d",
+      "ground": "#160910"
+    },
+    {
+      "slug": "unravel",
+      "label": "The Unravelling",
+      "from": 1978,
+      "to": 1979,
+      "accent": "#8f7bd8",
+      "ground": "#0f0c16"
+    },
+    {
+      "slug": "afterlives",
+      "label": "Afterlives",
+      "from": 1980,
+      "to": 2100,
+      "accent": "#d8b165",
+      "ground": "#12100c"
+    }
+  ],
+  "events": [
+    {
+      "id": "the-runaways-formation-1975",
+      "date": "1975-08-01",
+      "year": 1975,
+      "when": "August 1975",
+      "event_type": "FORMATION",
+      "headline": "Kim Fowley assembles the Runaways in Los Angeles",
+      "significance": "major",
+      "generated": false,
+      "era": "assembly",
+      "era_label": "The Assembly"
+    },
+    {
+      "id": "the-runaways-currie-joins-1975",
+      "date": "1975-12-01",
+      "year": 1975,
+      "when": "December 1975",
+      "event_type": "MEMBER_JOIN",
+      "headline": "Fifteen-year-old Cherie Currie becomes the lead singer",
+      "significance": "major",
+      "generated": false,
+      "era": "assembly",
+      "era_label": "The Assembly"
+    },
+    {
+      "id": "album-release-the-runaways-1976",
+      "date": "1976-06-01",
+      "year": 1976,
+      "when": "June 1976",
+      "event_type": "ALBUM_RELEASE",
+      "headline": "The Runaways release The Runaways",
+      "significance": "minor",
+      "generated": true,
+      "era": "ascent",
+      "era_label": "Queens of Noise"
+    },
+    {
+      "id": "album-release-queens-of-noise-1977",
+      "date": "1977-01-01",
+      "year": 1977,
+      "when": "January 1977",
+      "event_type": "ALBUM_RELEASE",
+      "headline": "The Runaways release Queens of Noise",
+      "significance": "minor",
+      "generated": true,
+      "era": "ascent",
+      "era_label": "Queens of Noise"
+    },
+    {
+      "id": "the-runaways-fox-exit-1977",
+      "date": "1977-06-01",
+      "year": 1977,
+      "when": "June 1977",
+      "event_type": "MEMBER_EXIT",
+      "headline": "Jackie Fox leaves the band after the Japan tour",
+      "significance": "notable",
+      "generated": false,
+      "era": "ascent",
+      "era_label": "Queens of Noise"
+    },
+    {
+      "id": "the-runaways-japan-mania-1977",
+      "date": "1977-06-01",
+      "year": 1977,
+      "when": "June 1977",
+      "event_type": "PRESS_MILESTONE",
+      "headline": "The Runaways are mobbed like Beatlemania in Japan",
+      "significance": "major",
+      "generated": false,
+      "era": "ascent",
+      "era_label": "Queens of Noise"
+    },
+    {
+      "id": "tour-start-japan-tour-1977",
+      "date": "1977-06-01",
+      "year": 1977,
+      "when": "June 1977",
+      "event_type": "TOUR_START",
+      "headline": "The Runaways begin the Japan Tour",
+      "significance": "minor",
+      "generated": true,
+      "era": "ascent",
+      "era_label": "Queens of Noise"
+    },
+    {
+      "id": "album-release-live-in-japan-1977",
+      "date": "1977-07-01",
+      "year": 1977,
+      "when": "July 1977",
+      "event_type": "ALBUM_RELEASE",
+      "headline": "The Runaways release Live in Japan",
+      "significance": "minor",
+      "generated": true,
+      "era": "ascent",
+      "era_label": "Queens of Noise"
+    },
+    {
+      "id": "the-runaways-currie-exit-1977",
+      "date": "1977-08-01",
+      "year": 1977,
+      "when": "August 1977",
+      "event_type": "MEMBER_EXIT",
+      "headline": "Cherie Currie quits; Joan Jett takes over lead vocals",
+      "significance": "major",
+      "generated": false,
+      "era": "ascent",
+      "era_label": "Queens of Noise"
+    },
+    {
+      "id": "album-release-waitin-for-the-night-1977",
+      "date": "1977-10-01",
+      "year": 1977,
+      "when": "October 1977",
+      "event_type": "ALBUM_RELEASE",
+      "headline": "The Runaways release Waitin' for the Night",
+      "significance": "minor",
+      "generated": true,
+      "era": "ascent",
+      "era_label": "Queens of Noise"
+    },
+    {
+      "id": "album-release-and-now-the-runaways-1978",
+      "date": "1978-11-01",
+      "year": 1978,
+      "when": "November 1978",
+      "event_type": "ALBUM_RELEASE",
+      "headline": "The Runaways release And Now... The Runaways",
+      "significance": "minor",
+      "generated": true,
+      "era": "unravel",
+      "era_label": "The Unravelling"
+    },
+    {
+      "id": "the-runaways-breakup-1979",
+      "date": "1979-04-01",
+      "year": 1979,
+      "when": "April 1979",
+      "event_type": "BREAKUP",
+      "headline": "The Runaways break up",
+      "significance": "major",
+      "generated": false,
+      "era": "unravel",
+      "era_label": "The Unravelling"
+    },
+    {
+      "id": "cherie-currie-foxes-1980",
+      "date": "1980-01-01",
+      "year": 1980,
+      "when": "1980",
+      "event_type": "FILM",
+      "headline": "Cherie Currie co-stars in the film Foxes",
+      "significance": "minor",
+      "generated": false,
+      "era": "afterlives",
+      "era_label": "Afterlives"
+    },
+    {
+      "id": "joan-jett-i-love-rock-n-roll-number-one-1982",
+      "date": "1982-03-01",
+      "year": 1982,
+      "when": "March 1982",
+      "event_type": "CHART_MILESTONE",
+      "headline": "Joan Jett's \"I Love Rock 'n' Roll\" tops the US chart for seven weeks",
+      "significance": "major",
+      "generated": false,
+      "era": "afterlives",
+      "era_label": "Afterlives"
+    },
+    {
+      "id": "lita-ford-close-my-eyes-forever-1989",
+      "date": "1989-01-01",
+      "year": 1989,
+      "when": "1989",
+      "event_type": "CHART_MILESTONE",
+      "headline": "Lita Ford's \"Close My Eyes Forever\" reaches the US top ten",
+      "significance": "notable",
+      "generated": false,
+      "era": "afterlives",
+      "era_label": "Afterlives"
+    },
+    {
+      "id": "cherie-currie-neon-angel-1989",
+      "date": "1989-01-01",
+      "year": 1989,
+      "when": "1989",
+      "event_type": "PRESS_MILESTONE",
+      "headline": "Cherie Currie publishes her memoir Neon Angel",
+      "significance": "minor",
+      "generated": false,
+      "era": "afterlives",
+      "era_label": "Afterlives"
+    },
+    {
+      "id": "sandy-west-death-2006",
+      "date": "2006-10-21",
+      "year": 2006,
+      "when": "21 October 2006",
+      "event_type": "DEATH",
+      "headline": "Sandy West dies at 47",
+      "significance": "major",
+      "generated": false,
+      "era": "afterlives",
+      "era_label": "Afterlives"
+    },
+    {
+      "id": "the-runaways-film-2010",
+      "date": "2010-03-01",
+      "year": 2010,
+      "when": "March 2010",
+      "event_type": "FILM",
+      "headline": "A biopic, The Runaways, brings the band to a new generation",
+      "significance": "notable",
+      "generated": false,
+      "era": "afterlives",
+      "era_label": "Afterlives"
+    },
+    {
+      "id": "kim-fowley-death-2015",
+      "date": "2015-01-15",
+      "year": 2015,
+      "when": "15 January 2015",
+      "event_type": "DEATH",
+      "headline": "Kim Fowley dies at 75",
+      "significance": "notable",
+      "generated": false,
+      "era": "afterlives",
+      "era_label": "Afterlives"
+    }
+  ]
+}

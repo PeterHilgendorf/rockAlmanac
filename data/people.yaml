@@ -172,3 +172,121 @@
   notes: >
     Also maintains a major solo career; the first woman inducted twice
     into the Rock and Roll Hall of Fame (Fleetwood Mac 1998, solo 2019).
+
+# ---- The Runaways ----------------------------------------------------
+
+- id: joan-jett
+  name: Joan Jett
+  sort_name: Jett, Joan
+  legal_name: Joan Marie Larkin
+  birth_date: 1958-09-22
+  birth_precision: day
+  birth_place: Wynnewood, Pennsylvania, US
+  primary_roles: [rhythm guitar, vocals, songwriter]
+  musicbrainz_id: f376828a-b438-4fda-bb2e-dcd5fbe81f83
+  source_ids: [wp-joan-jett]
+  notes: >
+    Co-founder and the band's constant. Went on to form Joan Jett and
+    the Blackhearts and to a far larger solo career than the Runaways
+    ever had.
+
+- id: lita-ford
+  name: Lita Ford
+  sort_name: Ford, Lita
+  legal_name: Lita Rossana Ford
+  birth_date: 1958-09-19
+  birth_precision: day
+  birth_place: London, England
+  primary_roles: [lead guitar, vocals]
+  musicbrainz_id: f20ba447-269a-445a-9347-c1ec8632c455
+  source_ids: [wp-lita-ford]
+  notes: >
+    Lead guitarist; raised in Long Beach, California. Had a successful
+    solo hard-rock career in the 1980s.
+
+- id: cherie-currie
+  name: Cherie Currie
+  sort_name: Currie, Cherie
+  birth_date: 1959-11-30
+  birth_precision: day
+  birth_place: Encino, California, US
+  primary_roles: [vocals]
+  musicbrainz_id: 38df6694-ae8e-4078-a7f1-81e4d8b88cbc
+  source_ids: [wp-cherie-currie]
+  notes: >
+    The teenage lead singer, recruited at fifteen. Later an actress and
+    author; has an identical twin sister, Marie.
+
+- id: sandy-west
+  name: Sandy West
+  sort_name: West, Sandy
+  legal_name: Sandra Sue Pesavento
+  birth_date: 1959-07-10
+  birth_precision: day
+  birth_place: Long Beach, California, US
+  death_date: 2006-10-21
+  death_precision: day
+  death_place: San Dimas, California, US
+  primary_roles: [drums, vocals]
+  musicbrainz_id: 649ba2df-7d69-4041-82f5-2907ed868f8d
+  source_ids: [wp-sandy-west]
+  notes: >
+    Founding drummer. Met Kim Fowley at a teen club at fifteen; he gave
+    her Joan Jett's phone number and the band began there. Died of lung
+    cancer in 2006.
+
+- id: jackie-fox
+  name: Jackie Fox
+  sort_name: Fox, Jackie
+  legal_name: Jacqueline Fuchs
+  birth_date: 1959-12-20
+  birth_precision: day
+  birth_place: Los Angeles, California, US
+  primary_roles: [bass]
+  source_ids: [wp-jackie-fox]
+  notes: >
+    Bassist on three albums; left at seventeen after the 1977 Japan
+    tour. Later earned a law degree from Harvard and became an
+    entertainment attorney.
+
+- id: micki-steele
+  name: Micki Steele
+  sort_name: Steele, Micki
+  primary_roles: [bass, vocals]
+  source_ids: [wp-the-runaways]
+  notes: >
+    The band's first bassist and a lead singer, August to October 1975;
+    later the bassist of the Bangles.
+
+- id: peggy-foster
+  name: Peggy Foster
+  sort_name: Foster, Peggy
+  primary_roles: [bass]
+  source_ids: [wp-the-runaways]
+  notes: Bassist for about two weeks in November 1975.
+
+- id: vicki-blue
+  name: Vicki Blue
+  sort_name: Blue, Vicki
+  primary_roles: [bass]
+  source_ids: [wp-the-runaways]
+  notes: >
+    Joined on bass in 1977, replacing Jackie Fox, and stayed to the end.
+    Later a filmmaker under the name Victory Tischler-Blue.
+
+- id: kim-fowley
+  name: Kim Fowley
+  sort_name: Fowley, Kim
+  legal_name: Kim Vincent Fowley
+  birth_date: 1939-07-21
+  birth_precision: day
+  birth_place: Los Angeles, California, US
+  death_date: 2015-01-15
+  death_precision: day
+  death_place: Los Angeles, California, US
+  primary_roles: [producer, songwriter, manager]
+  source_ids: [wp-kim-fowley]
+  notes: >
+    The impresario who assembled and managed the band and produced their
+    early records — a driving and deeply controversial figure in their
+    story.

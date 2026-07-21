@@ -1,29 +1,31 @@
 #!/usr/bin/env python3
-"""Rock Almanac event generator.
+"""Rock Almanac event generator — per collection.
 
-Some events are facts already stored on another record: an album's
-release date lives on the album; a tour's start and end live on the
-tour. Hand-entering ALBUM_RELEASE / TOUR_START / TOUR_END events would
-restate those facts and let them drift. So the schema forbids entering
-them by hand (validate.py rejects them in data/events.yaml) and this
-script generates them instead — the "events reference, they don't
-restate" rule made mechanical.
+A collection (data/collections.yaml) is one band's story. For each one
+this script:
 
-Reads data/albums.yaml and data/tours.yaml; writes:
+  - generates the events whose facts already live elsewhere —
+    ALBUM_RELEASE (one per album), TOUR_START, TOUR_END — from the album
+    and tour records of the collection's artists. These are forbidden in
+    hand-entered data (validate.py rejects them) and derived here, so the
+    "events reference, they don't restate" rule stays mechanical.
+  - gathers the hand-entered events that belong to the collection: any
+    event referencing one of its artists, or one of its people (members,
+    plus the managers/producers listed in `also_people` — this is how a
+    member's later solo milestones and deaths make the timeline).
+  - assigns each event an era from the collection's era bands.
+  - writes, under build/<collection>/:
+      events.generated.yaml   the generated events (never hand-edit)
+      timeline.md             hand + generated events, merged and sorted
+      timeline.json           the same, plus era colours — feeds the reel
 
-  build/events.generated.yaml   the generated events (never hand-edit)
-  build/timeline.md             hand-entered + generated events, merged
-                                and sorted — the first generated timeline
+Significance is computed, not guessed: an album inherits it from its
+chart peak (#1 major, top 40 notable, otherwise minor); a tour inherits
+its supporting album's. Re-running is idempotent.
 
-Each generated event derives its date and precision from the source
-record, links back to it by id, and carries that record's source_ids,
-so "everything is sourced" stays true. Significance is derived from
-chart performance rather than guessed:
-  album:  peak #1 -> major, top 40 -> notable, otherwise minor
-  tour:   inherits its supporting album's significance (default notable)
-
-Re-running is idempotent: identical inputs produce byte-identical
-output.
+Usage:
+  python3 scripts/build_events.py                 # all collections
+  python3 scripts/build_events.py the-runaways    # one collection
 """
 
 import datetime
@@ -41,22 +43,7 @@ PRECISIONS = ["year", "month", "day"]
 MONTHS = ["", "January", "February", "March", "April", "May", "June",
           "July", "August", "September", "October", "November", "December"]
 SIG_MARK = {"major": "★", "notable": "•", "minor": "·"}
-
-# Editorial eras — used to colour and caption the social timeline.
-# (from_year, to_year_inclusive, slug, label)
-ERAS = [
-    (1967, 1970, "blues", "The Blues Era"),
-    (1971, 1974, "transition", "The Transition"),
-    (1975, 1987, "classic", "The Rumours Era"),
-    (1988, 2100, "legacy", "The Legacy Years"),
-]
-
-
-def era_for(year):
-    for lo, hi, slug, label in ERAS:
-        if lo <= year <= hi:
-            return slug, label
-    return "legacy", "The Legacy Years"
+GENERATED_TYPES = ("ALBUM_RELEASE", "TOUR_START", "TOUR_END")
 
 
 def load(name):
@@ -65,16 +52,19 @@ def load(name):
 
 
 def as_date(value):
-    if isinstance(value, datetime.date):
-        return value
-    return datetime.date.fromisoformat(value)
+    return value if isinstance(value, datetime.date) else datetime.date.fromisoformat(value)
 
 
 def iso(value):
     return as_date(value).isoformat()
 
 
-# ---------------------------------------------------------------- significance
+def era_for(year, eras):
+    for e in eras:
+        if e["from"] <= year <= e["to"]:
+            return e
+    return eras[-1]
+
 
 def album_significance(album):
     peak = album.get("peak_position")
@@ -87,11 +77,9 @@ def album_significance(album):
 
 # ---------------------------------------------------------------- generation
 
-def generate(albums, tours, artists):
-    names = {a["id"]: a["name"] for a in artists}
-    albums_by_id = {a["id"]: a for a in albums}
+def generate(albums, tours, names, albums_by_id):
+    """Generated events for one collection's albums and tours."""
     events = []
-
     for al in sorted(albums, key=lambda a: iso(a["release_date"])):
         artist = names.get(al["artist_id"], al["artist_id"])
         events.append({
@@ -105,43 +93,32 @@ def generate(albums, tours, artists):
             "significance": album_significance(al),
             "source_ids": list(al.get("source_ids", [])),
         })
-
     for t in sorted(tours, key=lambda t: t.get("start_date") and iso(t["start_date"]) or ""):
         artist = names.get(t["artist_id"], t["artist_id"])
         supporting = albums_by_id.get(t.get("supporting_album_id"))
         sig = album_significance(supporting) if supporting else "notable"
         if t.get("start_date"):
             events.append({
-                "id": "tour-start-%s" % t["id"],
-                "event_type": "TOUR_START",
-                "date": iso(t["start_date"]),
-                "date_precision": t["start_precision"],
-                "artist_ids": [t["artist_id"]],
-                "tour_id": t["id"],
+                "id": "tour-start-%s" % t["id"], "event_type": "TOUR_START",
+                "date": iso(t["start_date"]), "date_precision": t["start_precision"],
+                "artist_ids": [t["artist_id"]], "tour_id": t["id"],
                 "headline": "%s begin the %s" % (artist, t["name"]),
-                "significance": sig,
-                "source_ids": list(t.get("source_ids", [])),
+                "significance": sig, "source_ids": list(t.get("source_ids", [])),
             })
         if t.get("end_date"):
             events.append({
-                "id": "tour-end-%s" % t["id"],
-                "event_type": "TOUR_END",
-                "date": iso(t["end_date"]),
-                "date_precision": t["end_precision"],
-                "artist_ids": [t["artist_id"]],
-                "tour_id": t["id"],
+                "id": "tour-end-%s" % t["id"], "event_type": "TOUR_END",
+                "date": iso(t["end_date"]), "date_precision": t["end_precision"],
+                "artist_ids": [t["artist_id"]], "tour_id": t["id"],
                 "headline": "The %s comes to an end" % t["name"],
-                "significance": sig,
-                "source_ids": list(t.get("source_ids", [])),
+                "significance": sig, "source_ids": list(t.get("source_ids", [])),
             })
-
     return events
 
 
 # ---------------------------------------------------------------- output
 
 def sort_key(ev):
-    # by date, then coarse-precision first, then a stable type/id order
     return (iso(ev["date"]), PRECISIONS.index(ev["date_precision"]),
             ev["event_type"], ev["id"])
 
@@ -155,102 +132,107 @@ def format_date(value, precision):
     return "%d %s %d" % (d.day, MONTHS[d.month], d.year)
 
 
-def write_generated(events):
+def write_generated(out_dir, events):
     header = (
         "# Rock Almanac — GENERATED events. DO NOT EDIT.\n"
-        "# Produced by scripts/build_events.py from data/albums.yaml and\n"
-        "# data/tours.yaml. Edit those records, then re-run the script.\n"
-        "# ALBUM_RELEASE / TOUR_START / TOUR_END are derived here on purpose:\n"
-        "# their dates live on the album and tour records, not restated by hand.\n\n"
-    )
-    body = yaml.safe_dump(events, sort_keys=False, allow_unicode=True, default_flow_style=False)
-    (BUILD_DIR / "events.generated.yaml").write_text(header + body)
+        "# Produced by scripts/build_events.py from album and tour records.\n\n")
+    body = yaml.safe_dump(events, sort_keys=False, allow_unicode=True,
+                          default_flow_style=False)
+    (out_dir / "events.generated.yaml").write_text(header + body)
 
 
-def write_timeline(hand_events, generated):
-    combined = sorted(hand_events + generated, key=sort_key)
+def write_timeline_md(out_dir, coll, events):
     lines = [
-        "# Fleetwood Mac — Timeline",
-        "",
-        "*Generated by `scripts/build_events.py`. Hand-entered events from "
-        "`data/events.yaml` merged with events generated from album and tour "
-        "records, sorted by date.*",
-        "",
-        "Significance: ★ major · • notable · · minor",
-        "",
+        "# %s — Timeline" % coll["title"], "",
+        "*Generated by `scripts/build_events.py`. Hand-entered events merged "
+        "with events generated from album and tour records, sorted by date.*",
+        "", "Significance: ★ major · • notable · · minor", "",
     ]
-    current_year = None
-    for ev in combined:
-        year = as_date(ev["date"]).year
-        if year != current_year:
-            current_year = year
-            lines.append("")
-            lines.append("## %d" % year)
-            lines.append("")
-        mark = SIG_MARK.get(ev["significance"], " ")
-        when = format_date(ev["date"], ev["date_precision"])
-        gen = " _(generated)_" if ev["event_type"] in (
-            "ALBUM_RELEASE", "TOUR_START", "TOUR_END") else ""
-        lines.append("- %s **%s** — %s%s" % (mark, when, ev["headline"], gen))
-    lines.append("")
-    (BUILD_DIR / "timeline.md").write_text("\n".join(lines))
+    year = None
+    for ev in events:
+        y = as_date(ev["date"]).year
+        if y != year:
+            year = y
+            lines += ["", "## %d" % y, ""]
+        gen = " _(generated)_" if ev["event_type"] in GENERATED_TYPES else ""
+        lines.append("- %s **%s** — %s%s" % (
+            SIG_MARK.get(ev["significance"], " "),
+            format_date(ev["date"], ev["date_precision"]), ev["headline"], gen))
+    (out_dir / "timeline.md").write_text("\n".join(lines) + "\n")
 
 
-GENERATED_TYPES = ("ALBUM_RELEASE", "TOUR_START", "TOUR_END")
-
-
-def write_timeline_json(hand_events, generated):
-    """Structured, self-contained timeline for downstream visuals
-    (social cards, web). One row per event, already sorted."""
-    combined = sorted(hand_events + generated, key=sort_key)
+def write_timeline_json(out_dir, coll, events):
     rows = []
-    for ev in combined:
+    for ev in events:
         d = as_date(ev["date"])
-        slug, label = era_for(d.year)
+        era = era_for(d.year, coll["eras"])
         rows.append({
-            "id": ev["id"],
-            "date": d.isoformat(),
-            "year": d.year,
+            "id": ev["id"], "date": d.isoformat(), "year": d.year,
             "when": format_date(ev["date"], ev["date_precision"]),
-            "event_type": ev["event_type"],
-            "headline": ev["headline"],
+            "event_type": ev["event_type"], "headline": ev["headline"],
             "significance": ev["significance"],
             "generated": ev["event_type"] in GENERATED_TYPES,
-            "era": slug,
-            "era_label": label,
+            "era": era["slug"], "era_label": era["label"],
         })
     payload = {
-        "artist": "Fleetwood Mac",
+        "collection": coll["id"], "title": coll["title"],
+        "subtitle": coll.get("subtitle", ""),
         "generated_at": datetime.date.today().isoformat(),
-        "eras": [{"slug": s, "label": l, "from": lo, "to": hi}
-                 for lo, hi, s, l in ERAS],
-        "events": rows,
+        "eras": coll["eras"], "events": rows,
     }
-    (BUILD_DIR / "timeline.json").write_text(
+    (out_dir / "timeline.json").write_text(
         json.dumps(payload, indent=2, ensure_ascii=False) + "\n")
 
 
+# ---------------------------------------------------------------- build
+
+def build_collection(coll, data):
+    artist_ids = set(coll["artist_ids"])
+    persons = set(coll.get("also_people", []))
+    for m in data["membership"]:
+        if m.get("artist_id") in artist_ids:
+            persons.add(m.get("person_id"))
+
+    names = {a["id"]: a["name"] for a in data["artist"]}
+    albums = [a for a in data["album"] if a.get("artist_id") in artist_ids]
+    tours = [t for t in data["tour"] if t.get("artist_id") in artist_ids]
+    albums_by_id = {a["id"]: a for a in albums}
+
+    generated = generate(albums, tours, names, albums_by_id)
+
+    def belongs(ev):
+        return (set(ev.get("artist_ids", [])) & artist_ids
+                or set(ev.get("person_ids", [])) & persons)
+
+    hand = [e for e in data["event"] if belongs(e)]
+    combined = sorted(hand + generated, key=sort_key)
+
+    out_dir = BUILD_DIR / coll["id"]
+    out_dir.mkdir(parents=True, exist_ok=True)
+    write_generated(out_dir, generated)
+    write_timeline_md(out_dir, coll, combined)
+    write_timeline_json(out_dir, coll, combined)
+
+    ng = len(generated)
+    print("  %-16s %2d events  (%d hand + %d generated)  -> build/%s/"
+          % (coll["id"], len(combined), len(combined) - ng, ng, coll["id"]))
+
+
 def main():
+    collections = load("collections.yaml")
+    data = {e: load(f) for e, f in {
+        "artist": "artists.yaml", "album": "albums.yaml", "tour": "tours.yaml",
+        "event": "events.yaml", "membership": "memberships.yaml",
+    }.items()}
+
+    wanted = sys.argv[1:] or [c["id"] for c in collections]
+    by_id = {c["id"]: c for c in collections}
     BUILD_DIR.mkdir(exist_ok=True)
-    albums = load("albums.yaml")
-    tours = load("tours.yaml")
-    artists = load("artists.yaml")
-    hand_events = load("events.yaml")
-
-    generated = generate(albums, tours, artists)
-    write_generated(generated)
-    write_timeline(hand_events, generated)
-    write_timeline_json(hand_events, generated)
-
-    n_album = sum(1 for e in generated if e["event_type"] == "ALBUM_RELEASE")
-    n_tstart = sum(1 for e in generated if e["event_type"] == "TOUR_START")
-    n_tend = sum(1 for e in generated if e["event_type"] == "TOUR_END")
-    print("Generated %d events: %d ALBUM_RELEASE, %d TOUR_START, %d TOUR_END"
-          % (len(generated), n_album, n_tstart, n_tend))
-    print("Timeline: %d events total (%d hand-entered + %d generated)"
-          % (len(hand_events) + len(generated), len(hand_events), len(generated)))
-    print("Wrote build/events.generated.yaml, build/timeline.md, "
-          "build/timeline.json")
+    for cid in wanted:
+        if cid not in by_id:
+            sys.exit("Unknown collection: %s (have: %s)"
+                     % (cid, ", ".join(by_id)))
+        build_collection(by_id[cid], data)
     return 0
 
 

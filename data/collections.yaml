@@ -1,0 +1,27 @@
+# Rock Almanac — collections
+# A collection is one band's story: which artist records belong to it,
+# any non-member people to fold in (managers, producers), a display
+# title, and the editorial eras that colour its timeline and reel.
+# scripts/build_events.py builds one timeline + reel dataset per entry.
+
+- id: fleetwood-mac
+  title: Fleetwood Mac
+  subtitle: 1967 – 2022
+  artist_ids: [fleetwood-mac, buckingham-nicks]
+  also_people: []
+  eras:
+    - {slug: blues,      label: The Blues Era,    from: 1967, to: 1970, accent: "#7fa6c9", ground: "#0a0d13"}
+    - {slug: transition, label: The Transition,   from: 1971, to: 1974, accent: "#cc9a55", ground: "#120f0a"}
+    - {slug: classic,    label: The Rumours Era,  from: 1975, to: 1987, accent: "#d3968f", ground: "#140f0e"}
+    - {slug: legacy,     label: The Legacy Years, from: 1988, to: 2100, accent: "#9fa8b0", ground: "#0f1012"}
+
+- id: the-runaways
+  title: The Runaways
+  subtitle: 1975 – 1979
+  artist_ids: [the-runaways]
+  also_people: [kim-fowley]
+  eras:
+    - {slug: assembly,   label: The Assembly,     from: 1975, to: 1975, accent: "#e0563b", ground: "#150a08"}
+    - {slug: ascent,     label: Queens of Noise,  from: 1976, to: 1977, accent: "#e6467d", ground: "#160910"}
+    - {slug: unravel,    label: The Unravelling,  from: 1978, to: 1979, accent: "#8f7bd8", ground: "#0f0c16"}
+    - {slug: afterlives, label: Afterlives,       from: 1980, to: 2100, accent: "#d8b165", ground: "#12100c"}

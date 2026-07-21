@@ -1,0 +1,74 @@
+# Rock Almanac — GENERATED events. DO NOT EDIT.
+# Produced by scripts/build_events.py from album and tour records.
+
+- id: album-release-the-runaways-1976
+  event_type: ALBUM_RELEASE
+  date: '1976-06-01'
+  date_precision: month
+  artist_ids:
+  - the-runaways
+  album_id: the-runaways-1976
+  headline: The Runaways release The Runaways
+  significance: minor
+  source_ids:
+  - wp-the-runaways
+  - mb-the-runaways
+- id: album-release-queens-of-noise-1977
+  event_type: ALBUM_RELEASE
+  date: '1977-01-01'
+  date_precision: month
+  artist_ids:
+  - the-runaways
+  album_id: queens-of-noise-1977
+  headline: The Runaways release Queens of Noise
+  significance: minor
+  source_ids:
+  - wp-the-runaways
+  - mb-the-runaways
+- id: album-release-live-in-japan-1977
+  event_type: ALBUM_RELEASE
+  date: '1977-07-01'
+  date_precision: month
+  artist_ids:
+  - the-runaways
+  album_id: live-in-japan-1977
+  headline: The Runaways release Live in Japan
+  significance: minor
+  source_ids:
+  - wp-the-runaways
+  - mb-the-runaways
+- id: album-release-waitin-for-the-night-1977
+  event_type: ALBUM_RELEASE
+  date: '1977-10-01'
+  date_precision: month
+  artist_ids:
+  - the-runaways
+  album_id: waitin-for-the-night-1977
+  headline: The Runaways release Waitin' for the Night
+  significance: minor
+  source_ids:
+  - wp-the-runaways
+  - mb-the-runaways
+- id: album-release-and-now-the-runaways-1978
+  event_type: ALBUM_RELEASE
+  date: '1978-11-01'
+  date_precision: month
+  artist_ids:
+  - the-runaways
+  album_id: and-now-the-runaways-1978
+  headline: The Runaways release And Now... The Runaways
+  significance: minor
+  source_ids:
+  - wp-the-runaways
+  - mb-the-runaways
+- id: tour-start-japan-tour-1977
+  event_type: TOUR_START
+  date: '1977-06-01'
+  date_precision: month
+  artist_ids:
+  - the-runaways
+  tour_id: japan-tour-1977
+  headline: The Runaways begin the Japan Tour
+  significance: minor
+  source_ids:
+  - wp-the-runaways

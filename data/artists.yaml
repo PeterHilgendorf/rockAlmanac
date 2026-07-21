@@ -40,3 +40,23 @@
     The duo dissolved when both members joined Fleetwood Mac; their lone
     album is why Mick Fleetwood heard Lindsey Buckingham's guitar at
     Sound City. MusicBrainz gives the duo's span as 1972–1974.
+
+- id: the-runaways
+  name: The Runaways
+  sort_name: Runaways, The
+  formed_date: 1975-08-01
+  formed_precision: month
+  formed_location: Los Angeles, California, US
+  disbanded_date: 1979-04-01
+  disbanded_precision: month
+  status: disbanded
+  genres: [punk rock, hard rock, glam punk]
+  musicbrainz_id: ded0d67a-eb71-4fe9-83c0-1d18b8ed497e
+  discogs_id: "242611"
+  wikipedia_url: https://en.wikipedia.org/wiki/The_Runaways
+  source_ids: [wp-the-runaways, mb-the-runaways, dg-the-runaways]
+  notes: >
+    An all-teenage-girl rock band assembled in Los Angeles by producer
+    Kim Fowley. Modest sellers in the US but enormous in Japan; broke up
+    after four years, after which Joan Jett and Lita Ford became bigger
+    solo stars than the band ever was.

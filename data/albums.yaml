@@ -201,3 +201,74 @@
     A commercial failure that got the duo dropped by Polydor — and got
     them into Fleetwood Mac, after Mick Fleetwood heard "Frozen Love"
     at Sound City. Its 2025 reissue finally charted.
+
+# ---- The Runaways ----------------------------------------------------
+# US chart performance was modest; the band's real commercial success
+# was in Japan. peak_position is omitted where unresearched (which is a
+# different fact from "did not chart").
+
+- id: the-runaways-1976
+  artist_id: the-runaways
+  title: The Runaways
+  release_date: 1976-06-01
+  release_precision: month
+  album_type: studio
+  label: Mercury
+  producers: [kim-fowley]
+  musicbrainz_id: 03a06598-2d75-3b9e-a2ad-f62440d2b179
+  discogs_id: "87937"
+  source_ids: [wp-the-runaways, mb-the-runaways]
+  notes: >
+    The debut, containing their signature song "Cherry Bomb". Sources
+    give the release as May or June 1976.
+
+- id: queens-of-noise-1977
+  artist_id: the-runaways
+  title: Queens of Noise
+  release_date: 1977-01-01
+  release_precision: month
+  album_type: studio
+  label: Mercury
+  producers: [kim-fowley]
+  musicbrainz_id: f42c2a95-2e04-3a9e-85f6-a5f1c9b37f5e
+  discogs_id: "247805"
+  source_ids: [wp-the-runaways, mb-the-runaways]
+
+- id: live-in-japan-1977
+  artist_id: the-runaways
+  title: Live in Japan
+  release_date: 1977-07-01
+  release_precision: month
+  album_type: live
+  label: Mercury
+  musicbrainz_id: 735745c0-3d34-3488-bf46-8af92b8ebf9a
+  discogs_id: "87939"
+  source_ids: [wp-the-runaways, mb-the-runaways]
+  notes: >
+    Recorded on the 1977 Japan tour; certified gold there, where the
+    band was a genuine sensation.
+
+- id: waitin-for-the-night-1977
+  artist_id: the-runaways
+  title: Waitin' for the Night
+  release_date: 1977-10-01
+  release_precision: month
+  album_type: studio
+  label: Mercury
+  musicbrainz_id: 5fd31d9e-ddbe-3352-83fe-2c13c973da9a
+  discogs_id: "156232"
+  source_ids: [wp-the-runaways, mb-the-runaways]
+  notes: First album with Joan Jett on lead vocals after Cherie Currie left.
+
+- id: and-now-the-runaways-1978
+  artist_id: the-runaways
+  title: And Now... The Runaways
+  release_date: 1978-11-01
+  release_precision: month
+  album_type: studio
+  musicbrainz_id: 9c501f5e-d3b9-3b8e-8e80-80849f81f0ba
+  discogs_id: "279390"
+  source_ids: [wp-the-runaways, mb-the-runaways]
+  notes: >
+    The final studio album, also issued as "Little Lost Girls". Release
+    dating varies across sources between 1978 and 1979.

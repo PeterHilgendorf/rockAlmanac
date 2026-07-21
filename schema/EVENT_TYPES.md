@@ -30,6 +30,7 @@ schema change: it gets added here first, with a definition, then used.
 | PERSONAL_EVENT | Notable personal moment that shaped the story: death of a child, health crisis, religious conversion, sobriety — description carries it |
 | TV_APPEARANCE | Major television moment: network debut, Ed Sullivan, SNL, The Late Show |
 | PRESS_MILESTONE | Major press moment: cover of Rolling Stone, landmark interview or profile |
+| FILM | A film about the artist is released — a biopic, concert film, or documentary |
 | INCIDENT | Editorially significant one-off that fits nothing above (accident, onstage brawl, controversy) |
 
 Rules:
