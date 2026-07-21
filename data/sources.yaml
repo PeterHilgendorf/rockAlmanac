@@ -1,0 +1,123 @@
+# Rock Almanac — sources
+# Every fact in data/ cites at least one record here.
+# This first pass leans on Wikipedia (tertiary); upgrading key facts to
+# primary/secondary sources is tracked as follow-up work.
+
+- id: wp-fleetwood-mac
+  source_type: wikipedia
+  title: Fleetwood Mac
+  url: https://en.wikipedia.org/wiki/Fleetwood_Mac
+  accessed_date: 2026-07-21
+  reliability: tertiary
+
+- id: wp-fleetwood-mac-discography
+  source_type: wikipedia
+  title: Fleetwood Mac discography
+  url: https://en.wikipedia.org/wiki/Fleetwood_Mac_discography
+  accessed_date: 2026-07-21
+  reliability: tertiary
+
+- id: wp-rumours
+  source_type: wikipedia
+  title: Rumours (album)
+  url: https://en.wikipedia.org/wiki/Rumours
+  accessed_date: 2026-07-21
+  reliability: tertiary
+
+- id: wp-rumours-tour
+  source_type: wikipedia
+  title: Rumours Tour
+  url: https://en.wikipedia.org/wiki/Rumours_Tour
+  accessed_date: 2026-07-21
+  reliability: tertiary
+
+- id: wp-buckingham-nicks
+  source_type: wikipedia
+  title: Buckingham Nicks
+  url: https://en.wikipedia.org/wiki/Buckingham_Nicks
+  accessed_date: 2026-07-21
+  reliability: tertiary
+
+- id: wp-peter-green
+  source_type: wikipedia
+  title: Peter Green (musician)
+  url: https://en.wikipedia.org/wiki/Peter_Green_(musician)
+  accessed_date: 2026-07-21
+  reliability: tertiary
+
+- id: wp-mick-fleetwood
+  source_type: wikipedia
+  title: Mick Fleetwood
+  url: https://en.wikipedia.org/wiki/Mick_Fleetwood
+  accessed_date: 2026-07-21
+  reliability: tertiary
+
+- id: wp-john-mcvie
+  source_type: wikipedia
+  title: John McVie
+  url: https://en.wikipedia.org/wiki/John_McVie
+  accessed_date: 2026-07-21
+  reliability: tertiary
+
+- id: wp-jeremy-spencer
+  source_type: wikipedia
+  title: Jeremy Spencer
+  url: https://en.wikipedia.org/wiki/Jeremy_Spencer
+  accessed_date: 2026-07-21
+  reliability: tertiary
+
+- id: wp-bob-brunning
+  source_type: wikipedia
+  title: Bob Brunning
+  url: https://en.wikipedia.org/wiki/Bob_Brunning
+  accessed_date: 2026-07-21
+  reliability: tertiary
+
+- id: wp-danny-kirwan
+  source_type: wikipedia
+  title: Danny Kirwan
+  url: https://en.wikipedia.org/wiki/Danny_Kirwan
+  accessed_date: 2026-07-21
+  reliability: tertiary
+
+- id: wp-christine-mcvie
+  source_type: wikipedia
+  title: Christine McVie
+  url: https://en.wikipedia.org/wiki/Christine_McVie
+  accessed_date: 2026-07-21
+  reliability: tertiary
+
+- id: wp-bob-welch
+  source_type: wikipedia
+  title: Bob Welch (musician)
+  url: https://en.wikipedia.org/wiki/Bob_Welch_(musician)
+  accessed_date: 2026-07-21
+  reliability: tertiary
+
+- id: wp-dave-walker
+  source_type: wikipedia
+  title: Dave Walker (singer)
+  url: https://en.wikipedia.org/wiki/Dave_Walker_(singer)
+  accessed_date: 2026-07-21
+  reliability: tertiary
+
+- id: wp-bob-weston
+  source_type: wikipedia
+  title: Bob Weston (guitarist)
+  url: https://en.wikipedia.org/wiki/Bob_Weston_(guitarist)
+  accessed_date: 2026-07-21
+  reliability: tertiary
+
+- id: wp-lindsey-buckingham
+  source_type: wikipedia
+  title: Lindsey Buckingham
+  url: https://en.wikipedia.org/wiki/Lindsey_Buckingham
+  accessed_date: 2026-07-21
+  reliability: tertiary
+
+- id: wp-stevie-nicks
+  source_type: wikipedia
+  title: Stevie Nicks
+  url: https://en.wikipedia.org/wiki/Stevie_Nicks
+  accessed_date: 2026-07-21
+  reliability: tertiary

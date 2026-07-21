@@ -1,0 +1,29 @@
+# Rock Almanac — relationships (the graph)
+
+- id: buckingham-nicks-precursor-fleetwood-mac
+  rel_type: PRECURSOR_OF
+  from: artist:buckingham-nicks
+  to: artist:fleetwood-mac
+  source_ids: [wp-buckingham-nicks]
+
+- id: john-mcvie-married-christine-mcvie
+  rel_type: MARRIED_TO
+  from: person:john-mcvie
+  to: person:christine-mcvie
+  start_date: 1968-01-01
+  start_precision: year
+  end_date: 1976-01-01
+  end_precision: year
+  source_ids: [wp-john-mcvie, wp-christine-mcvie]
+
+- id: lindsey-buckingham-partner-stevie-nicks
+  rel_type: PARTNER_OF
+  from: person:lindsey-buckingham
+  to: person:stevie-nicks
+  end_date: 1976-01-01
+  end_precision: year
+  source_ids: [wp-lindsey-buckingham, wp-stevie-nicks]
+  notes: >
+    A couple from the early 1970s; their breakup during the Rumours
+    sessions is written all over the album. Start date pending a
+    citable source.

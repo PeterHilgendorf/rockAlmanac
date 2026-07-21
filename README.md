@@ -19,9 +19,14 @@ data.
 | Folder | What it is |
 |---|---|
 | [schema/](schema/) | The contract with the data: ten entity definitions, conventions, and the event-type vocabulary. Start here. |
+| [data/](data/) | The dataset — one YAML file per entity. Fleetwood Mac is the reference dataset. |
+| [scripts/](scripts/) | Tooling. `validate.py` checks every record in data/ against the schema. |
 
-Data, importers, and build scripts will land in their own folders as
-they take shape.
+Importers and build scripts will land alongside as they take shape.
+
+```
+python3 scripts/validate.py
+```
 
 ## Reference dataset
 

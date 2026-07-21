@@ -1,0 +1,156 @@
+# Rock Almanac — people
+# Humans exist independently of any band. Membership lives in memberships.yaml.
+
+- id: peter-green
+  name: Peter Green
+  sort_name: Green, Peter
+  legal_name: Peter Allen Greenbaum
+  birth_date: 1946-10-29
+  birth_precision: day
+  birth_place: Bethnal Green, London, England
+  death_date: 2020-07-25
+  death_precision: day
+  death_place: Canvey Island, Essex, England
+  primary_roles: [guitar, vocals, songwriter]
+  source_ids: [wp-peter-green]
+  notes: >
+    Founded Fleetwood Mac and named it after its rhythm section. Left in
+    1970 amid deteriorating mental health; later diagnosed with
+    schizophrenia.
+
+- id: mick-fleetwood
+  name: Mick Fleetwood
+  sort_name: Fleetwood, Mick
+  legal_name: Michael John Kells Fleetwood
+  birth_date: 1947-06-24
+  birth_precision: day
+  birth_place: Redruth, Cornwall, England
+  primary_roles: [drums]
+  source_ids: [wp-mick-fleetwood]
+  notes: The only member present on every Fleetwood Mac album.
+
+- id: john-mcvie
+  name: John McVie
+  sort_name: McVie, John
+  legal_name: John Graham McVie
+  birth_date: 1945-11-26
+  birth_precision: day
+  birth_place: Ealing, London, England
+  primary_roles: [bass]
+  source_ids: [wp-john-mcvie]
+  notes: The "Mac" in Fleetwood Mac.
+
+- id: jeremy-spencer
+  name: Jeremy Spencer
+  sort_name: Spencer, Jeremy
+  birth_date: 1948-07-04
+  birth_precision: day
+  birth_place: West Hartlepool, County Durham, England
+  primary_roles: [slide guitar, vocals]
+  source_ids: [wp-jeremy-spencer]
+
+- id: bob-brunning
+  name: Bob Brunning
+  sort_name: Brunning, Bob
+  birth_date: 1943-06-29
+  birth_precision: day
+  birth_place: Bournemouth, Hampshire, England
+  death_date: 2011-10-18
+  death_precision: day
+  death_place: London, England
+  primary_roles: [bass]
+  source_ids: [wp-bob-brunning]
+  notes: >
+    Founding bassist, hired with the understanding that he would step
+    aside if John McVie could be persuaded to join — which he was,
+    weeks later. Brunning went on to a career in teaching and writing.
+
+- id: danny-kirwan
+  name: Danny Kirwan
+  sort_name: Kirwan, Danny
+  birth_date: 1950-05-13
+  birth_precision: day
+  birth_place: Brixton, London, England
+  death_date: 2018-06-08
+  death_precision: day
+  death_place: London, England
+  primary_roles: [guitar, vocals, songwriter]
+  source_ids: [wp-danny-kirwan]
+
+- id: christine-mcvie
+  name: Christine McVie
+  sort_name: McVie, Christine
+  legal_name: Christine Anne McVie (née Perfect)
+  birth_date: 1943-07-12
+  birth_precision: day
+  birth_place: Bouth, Lancashire, England
+  death_date: 2022-11-30
+  death_precision: day
+  death_place: London, England
+  primary_roles: [keyboards, vocals, songwriter]
+  source_ids: [wp-christine-mcvie]
+  notes: >
+    Recorded as Christine Perfect with Chicken Shack before joining
+    Fleetwood Mac.
+
+- id: bob-welch
+  name: Bob Welch
+  sort_name: Welch, Bob
+  birth_date: 1945-08-31
+  birth_precision: day
+  birth_place: Los Angeles, California, US
+  death_date: 2012-06-07
+  death_precision: day
+  death_place: Nashville, Tennessee, US
+  primary_roles: [guitar, vocals, songwriter]
+  source_ids: [wp-bob-welch]
+  notes: >
+    The band's first American member; bridged the British blues era and
+    the California era, then had solo hits with "Sentimental Lady" and
+    "Ebony Eyes".
+
+- id: dave-walker
+  name: Dave Walker
+  sort_name: Walker, Dave
+  birth_date: 1945-01-25
+  birth_precision: day
+  birth_place: Walsall, Staffordshire, England
+  primary_roles: [vocals, harmonica]
+  source_ids: [wp-dave-walker]
+  notes: Joined from Savoy Brown; later fronted Black Sabbath briefly.
+
+- id: bob-weston
+  name: Bob Weston
+  sort_name: Weston, Bob
+  birth_date: 1947-11-01
+  birth_precision: day
+  birth_place: Plymouth, Devon, England
+  death_date: 2012-01-03
+  death_precision: day
+  death_place: London, England
+  primary_roles: [guitar]
+  source_ids: [wp-bob-weston]
+  notes: Death date is the date he was found; he died at home in Brent.
+
+- id: lindsey-buckingham
+  name: Lindsey Buckingham
+  sort_name: Buckingham, Lindsey
+  legal_name: Lindsey Adams Buckingham
+  birth_date: 1949-10-03
+  birth_precision: day
+  birth_place: Palo Alto, California, US
+  primary_roles: [guitar, vocals, songwriter, producer]
+  source_ids: [wp-lindsey-buckingham]
+
+- id: stevie-nicks
+  name: Stevie Nicks
+  sort_name: Nicks, Stevie
+  legal_name: Stephanie Lynn Nicks
+  birth_date: 1948-05-26
+  birth_precision: day
+  birth_place: Phoenix, Arizona, US
+  primary_roles: [vocals, songwriter]
+  source_ids: [wp-stevie-nicks]
+  notes: >
+    Also maintains a major solo career; the first woman inducted twice
+    into the Rock and Roll Hall of Fame.

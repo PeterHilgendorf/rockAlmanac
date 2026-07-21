@@ -1,0 +1,92 @@
+# Rock Almanac — tracks
+# Optional depth, added where discography detail matters. Rumours first.
+# Durations omitted pending verification against liner notes.
+
+- id: rumours-1977--second-hand-news
+  album_id: rumours-1977
+  title: Second Hand News
+  position: 1
+  writer_ids: [lindsey-buckingham]
+  source_ids: [wp-rumours]
+
+- id: rumours-1977--dreams
+  album_id: rumours-1977
+  title: Dreams
+  position: 2
+  writer_ids: [stevie-nicks]
+  lead_vocal_ids: [stevie-nicks]
+  single: true
+  source_ids: [wp-rumours]
+  notes: The band's only US #1 single.
+
+- id: rumours-1977--never-going-back-again
+  album_id: rumours-1977
+  title: Never Going Back Again
+  position: 3
+  writer_ids: [lindsey-buckingham]
+  source_ids: [wp-rumours]
+
+- id: rumours-1977--dont-stop
+  album_id: rumours-1977
+  title: Don't Stop
+  position: 4
+  writer_ids: [christine-mcvie]
+  single: true
+  source_ids: [wp-rumours]
+
+- id: rumours-1977--go-your-own-way
+  album_id: rumours-1977
+  title: Go Your Own Way
+  position: 5
+  writer_ids: [lindsey-buckingham]
+  lead_vocal_ids: [lindsey-buckingham]
+  single: true
+  source_ids: [wp-rumours]
+  notes: Lead single, released ahead of the album in December 1976.
+
+- id: rumours-1977--songbird
+  album_id: rumours-1977
+  title: Songbird
+  position: 6
+  writer_ids: [christine-mcvie]
+  lead_vocal_ids: [christine-mcvie]
+  source_ids: [wp-rumours]
+
+- id: rumours-1977--the-chain
+  album_id: rumours-1977
+  title: The Chain
+  position: 7
+  writer_ids: [lindsey-buckingham, stevie-nicks, christine-mcvie, john-mcvie, mick-fleetwood]
+  source_ids: [wp-rumours]
+  notes: The only song credited to all five members.
+
+- id: rumours-1977--you-make-loving-fun
+  album_id: rumours-1977
+  title: You Make Loving Fun
+  position: 8
+  writer_ids: [christine-mcvie]
+  lead_vocal_ids: [christine-mcvie]
+  single: true
+  source_ids: [wp-rumours]
+
+- id: rumours-1977--i-dont-want-to-know
+  album_id: rumours-1977
+  title: I Don't Want to Know
+  position: 9
+  writer_ids: [stevie-nicks]
+  source_ids: [wp-rumours]
+
+- id: rumours-1977--oh-daddy
+  album_id: rumours-1977
+  title: Oh Daddy
+  position: 10
+  writer_ids: [christine-mcvie]
+  source_ids: [wp-rumours]
+
+- id: rumours-1977--gold-dust-woman
+  album_id: rumours-1977
+  title: Gold Dust Woman
+  position: 11
+  writer_ids: [stevie-nicks]
+  lead_vocal_ids: [stevie-nicks]
+  source_ids: [wp-rumours]

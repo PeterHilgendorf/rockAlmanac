@@ -1,0 +1,14 @@
+# Rock Almanac — tours
+# Individual shows are events (CONCERT) only when historically significant.
+
+- id: rumours-tour-1977
+  artist_id: fleetwood-mac
+  name: Rumours Tour
+  start_date: 1977-02-01
+  start_precision: month
+  end_date: 1978-08-01
+  end_precision: month
+  supporting_album_id: rumours-1977
+  regions: [North America, Europe, Japan, Oceania]
+  source_ids: [wp-rumours-tour]
+  notes: Leg-level detail pending verification.

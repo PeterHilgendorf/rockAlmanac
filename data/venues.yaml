@@ -1,0 +1,12 @@
+# Rock Almanac — venues
+# Only venues referenced by an event. No orphan venues.
+
+- id: royal-windsor-racecourse
+  name: Royal Windsor Racecourse
+  city: Windsor
+  region: Berkshire
+  country: UK
+  source_ids: [wp-fleetwood-mac]
+  notes: >
+    Site of the 1967 National Jazz and Blues Festival, where Fleetwood
+    Mac played their first show.

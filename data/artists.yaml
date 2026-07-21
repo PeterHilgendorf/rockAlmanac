@@ -1,0 +1,33 @@
+# Rock Almanac — artists
+
+- id: fleetwood-mac
+  name: Fleetwood Mac
+  sort_name: Fleetwood Mac
+  former_names: ["Peter Green's Fleetwood Mac"]
+  formed_date: 1967-07-01
+  formed_precision: month
+  formed_location: London, England
+  status: active
+  genres: [blues rock, pop rock, soft rock]
+  wikipedia_url: https://en.wikipedia.org/wiki/Fleetwood_Mac
+  source_ids: [wp-fleetwood-mac]
+  notes: >
+    No formal disbandment has been announced, but the band has been
+    inactive since Christine McVie's death in 2022; Mick Fleetwood and
+    Stevie Nicks have both said the band as it was is done.
+
+- id: buckingham-nicks
+  name: Buckingham Nicks
+  sort_name: Buckingham Nicks
+  formed_date: 1972-01-01
+  formed_precision: year
+  status: disbanded
+  disbanded_date: 1974-12-01
+  disbanded_precision: month
+  genres: [folk rock, soft rock]
+  wikipedia_url: https://en.wikipedia.org/wiki/Buckingham_Nicks
+  source_ids: [wp-buckingham-nicks]
+  notes: >
+    The duo dissolved when both members joined Fleetwood Mac; their lone
+    album is why Mick Fleetwood heard Lindsey Buckingham's guitar at
+    Sound City.
