@@ -4,7 +4,10 @@ Narration scripts drawn from the dataset, for spoken-word audio.
 
 | File | What it is |
 |---|---|
-| fleetwood-mac-sleep-history.md | A "boring history for sleep" narration of Fleetwood Mac, 1967–2022. |
+| fleetwood-mac-sleep-history.md | A "boring history for sleep" narration of Fleetwood Mac, 1967–2022. The master script. |
+| fleetwood-mac-sleep-history.elevenlabs.txt | The same script, prepped for ElevenLabs: header stripped, paragraphs unwrapped, `<break>` pauses inserted. Paste this into Studio. |
+| pronunciations.pls | ElevenLabs pronunciation dictionary (alias method) for the highest-risk names. |
+| ELEVENLABS.md | Step-by-step playbook: voice, settings, pronunciation, export. |
 
 ## The sleep script
 
