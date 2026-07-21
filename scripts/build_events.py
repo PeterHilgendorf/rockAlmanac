@@ -27,6 +27,7 @@ output.
 """
 
 import datetime
+import json
 import sys
 from pathlib import Path
 
@@ -40,6 +41,22 @@ PRECISIONS = ["year", "month", "day"]
 MONTHS = ["", "January", "February", "March", "April", "May", "June",
           "July", "August", "September", "October", "November", "December"]
 SIG_MARK = {"major": "★", "notable": "•", "minor": "·"}
+
+# Editorial eras — used to colour and caption the social timeline.
+# (from_year, to_year_inclusive, slug, label)
+ERAS = [
+    (1967, 1970, "blues", "The Blues Era"),
+    (1971, 1974, "transition", "The Transition"),
+    (1975, 1987, "classic", "The Rumours Era"),
+    (1988, 2100, "legacy", "The Legacy Years"),
+]
+
+
+def era_for(year):
+    for lo, hi, slug, label in ERAS:
+        if lo <= year <= hi:
+            return slug, label
+    return "legacy", "The Legacy Years"
 
 
 def load(name):
@@ -179,6 +196,40 @@ def write_timeline(hand_events, generated):
     (BUILD_DIR / "timeline.md").write_text("\n".join(lines))
 
 
+GENERATED_TYPES = ("ALBUM_RELEASE", "TOUR_START", "TOUR_END")
+
+
+def write_timeline_json(hand_events, generated):
+    """Structured, self-contained timeline for downstream visuals
+    (social cards, web). One row per event, already sorted."""
+    combined = sorted(hand_events + generated, key=sort_key)
+    rows = []
+    for ev in combined:
+        d = as_date(ev["date"])
+        slug, label = era_for(d.year)
+        rows.append({
+            "id": ev["id"],
+            "date": d.isoformat(),
+            "year": d.year,
+            "when": format_date(ev["date"], ev["date_precision"]),
+            "event_type": ev["event_type"],
+            "headline": ev["headline"],
+            "significance": ev["significance"],
+            "generated": ev["event_type"] in GENERATED_TYPES,
+            "era": slug,
+            "era_label": label,
+        })
+    payload = {
+        "artist": "Fleetwood Mac",
+        "generated_at": datetime.date.today().isoformat(),
+        "eras": [{"slug": s, "label": l, "from": lo, "to": hi}
+                 for lo, hi, s, l in ERAS],
+        "events": rows,
+    }
+    (BUILD_DIR / "timeline.json").write_text(
+        json.dumps(payload, indent=2, ensure_ascii=False) + "\n")
+
+
 def main():
     BUILD_DIR.mkdir(exist_ok=True)
     albums = load("albums.yaml")
@@ -189,6 +240,7 @@ def main():
     generated = generate(albums, tours, artists)
     write_generated(generated)
     write_timeline(hand_events, generated)
+    write_timeline_json(hand_events, generated)
 
     n_album = sum(1 for e in generated if e["event_type"] == "ALBUM_RELEASE")
     n_tstart = sum(1 for e in generated if e["event_type"] == "TOUR_START")
@@ -197,7 +249,8 @@ def main():
           % (len(generated), n_album, n_tstart, n_tend))
     print("Timeline: %d events total (%d hand-entered + %d generated)"
           % (len(hand_events) + len(generated), len(hand_events), len(generated)))
-    print("Wrote build/events.generated.yaml and build/timeline.md")
+    print("Wrote build/events.generated.yaml, build/timeline.md, "
+          "build/timeline.json")
     return 0
 
 

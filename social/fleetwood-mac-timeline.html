@@ -1,0 +1,450 @@
+<title>Fleetwood Mac &#8212; The Reel</title>
+<style>
+  :root{
+    color-scheme: dark;
+    --black:#0d0b0f;
+    --ground:#0a0d13;
+    --paper:#f0e9dc;
+    --paper-dim:#b8ad98;
+    --foil:#d8b165;
+    --foil-deep:#a9813f;
+    --accent:#7fa6c9;
+    --card-w: min(82vw, calc(80vh * 9 / 16));
+    --serif:"Didot","Bodoni 72","Bodoni MT","Playfair Display","Hoefler Text",Georgia,"Times New Roman",serif;
+    --geo:"Futura","Avenir Next","Century Gothic","Trebuchet MS","Helvetica Neue",Arial,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{
+    background:
+      radial-gradient(120% 90% at 50% -10%, #17141b 0%, var(--black) 55%, #060507 100%);
+    color:var(--paper);
+    font-family:var(--geo);
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    overflow-x:hidden;
+  }
+
+  /* ---- top bar ---------------------------------------------------- */
+  .topbar{
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:.8em;
+    padding:18px 16px 6px;
+    text-align:center;
+  }
+  .wordmark{
+    font-family:var(--geo);
+    font-weight:600;
+    letter-spacing:.42em;
+    font-size:12px;
+    text-transform:uppercase;
+    color:var(--foil);
+    padding-left:.42em;
+  }
+  .topbar .rule{height:1px;width:min(90px,10vw);background:linear-gradient(90deg,transparent,var(--foil-deep))}
+  .topbar .rule.r2{background:linear-gradient(90deg,var(--foil-deep),transparent)}
+
+  /* ---- stage / card ---------------------------------------------- */
+  .stage{
+    flex:1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:100%;
+    padding:6px 0 2px;
+  }
+  .card{
+    position:relative;
+    width:var(--card-w);
+    aspect-ratio:9/16;
+    container-type:size;
+    border-radius:6px;
+    overflow:hidden;
+    background:var(--ground);
+    box-shadow:
+      0 0 0 1px rgba(216,177,101,.14),
+      0 30px 80px -20px rgba(0,0,0,.8),
+      inset 0 0 120px rgba(0,0,0,.55);
+    isolation:isolate;
+    transition:background-color .9s ease;
+  }
+  /* era corner-glow: the only place era colour lives, as atmosphere */
+  .card::before{
+    content:"";
+    position:absolute;inset:0;z-index:0;
+    background:
+      radial-gradient(90% 60% at 78% 8%, color-mix(in oklab, var(--accent) 34%, transparent) 0%, transparent 60%),
+      radial-gradient(80% 55% at 12% 100%, color-mix(in oklab, var(--accent) 16%, transparent) 0%, transparent 55%);
+    opacity:.9;
+    transition:opacity .9s ease;
+    pointer-events:none;
+  }
+  /* vinyl sheen &#8212; a slow rotating glint, like light on a record */
+  .sheen{
+    position:absolute;z-index:0;pointer-events:none;
+    width:170cqh;height:170cqh;
+    left:50%;top:34cqh;
+    transform:translate(-50%,-50%);
+    border-radius:50%;
+    background:
+      repeating-radial-gradient(circle at center,
+        rgba(255,255,255,.028) 0 1px, transparent 1px 4px);
+    mask:radial-gradient(circle at center, #000 62%, transparent 63%);
+    -webkit-mask:radial-gradient(circle at center, #000 62%, transparent 63%);
+    opacity:.5;
+  }
+  .sheen::after{
+    content:"";position:absolute;inset:0;border-radius:50%;
+    background:conic-gradient(from 0deg,
+      transparent 0deg,
+      color-mix(in oklab, var(--foil) 26%, transparent) 40deg,
+      transparent 90deg,
+      transparent 210deg,
+      color-mix(in oklab, var(--accent) 20%, transparent) 250deg,
+      transparent 300deg);
+    animation:spin 26s linear infinite;
+    mix-blend-mode:screen;
+    opacity:.5;
+  }
+  @keyframes spin{to{transform:rotate(360deg)}}
+  /* film grain */
+  .card::after{
+    content:"";position:absolute;inset:0;z-index:3;pointer-events:none;
+    opacity:.05;mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .inner{
+    position:relative;z-index:2;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    padding:8cqh 8cqw 6cqh;
+  }
+
+  /* eyebrow: era + kind */
+  .eyebrow{
+    display:flex;align-items:center;gap:2.4cqw;
+    font-family:var(--geo);
+    text-transform:uppercase;
+  }
+  .era{
+    font-size:2.5cqh;
+    letter-spacing:.24em;
+    color:var(--accent);
+    font-weight:600;
+    padding-left:.24em;
+  }
+  .eyebrow .dot{width:.5cqh;height:.5cqh;min-width:3px;min-height:3px;border-radius:50%;background:var(--foil-deep)}
+  .kind{
+    font-size:2.5cqh;
+    letter-spacing:.22em;
+    color:var(--paper-dim);
+    font-weight:500;
+    padding-left:.22em;
+  }
+
+  .spacer{flex:1}
+
+  .when{
+    font-family:var(--geo);
+    font-size:3cqh;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--foil);
+    font-weight:500;
+    margin-bottom:1.4cqh;
+    padding-left:.14em;
+  }
+  .year{
+    font-family:var(--serif);
+    font-weight:400;
+    font-size:23cqh;
+    line-height:.82;
+    letter-spacing:-.01em;
+    color:var(--paper);
+    font-variant-numeric:lining-nums;
+    text-shadow:0 0 40cqh color-mix(in oklab, var(--accent) 22%, transparent);
+  }
+  .yearrule{
+    width:26cqw;height:2px;margin:2.6cqh 0 3.4cqh;
+    background:linear-gradient(90deg,var(--foil),var(--foil-deep) 70%,transparent);
+  }
+  .headline{
+    font-family:var(--serif);
+    font-weight:400;
+    font-size:7.4cqh;
+    line-height:1.06;
+    letter-spacing:.002em;
+    color:var(--paper);
+    text-wrap:balance;
+    max-width:82cqw;
+  }
+  .headline em{font-style:italic;color:var(--foil)}
+
+  .foot{
+    display:flex;align-items:center;justify-content:space-between;gap:2cqw;
+    margin-top:5cqh;
+    padding-top:3cqh;
+    border-top:1px solid rgba(216,177,101,.2);
+    font-family:var(--geo);
+  }
+  .sig{display:flex;align-items:center;gap:2cqw}
+  .sig svg{width:4.4cqh;height:4.4cqh;display:block;filter:drop-shadow(0 0 6px rgba(216,177,101,.35))}
+  .sig .lbl{font-size:2.2cqh;letter-spacing:.2em;text-transform:uppercase;color:var(--paper-dim);padding-left:.2em}
+  .foot .brand{
+    text-align:right;
+    font-size:2cqh;letter-spacing:.16em;text-transform:uppercase;color:var(--foil);
+    padding-left:.16em;line-height:1.5;
+  }
+  .foot .brand small{display:block;color:var(--paper-dim);letter-spacing:.1em;font-size:1.7cqh}
+
+  /* entrance animation (staggered) */
+  .anim{opacity:0;transform:translateY(14px)}
+  .card.show .anim{opacity:1;transform:none;transition:opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1)}
+  .card.show .eyebrow{transition-delay:.05s}
+  .card.show .when{transition-delay:.12s}
+  .card.show .year{transition-delay:.16s}
+  .card.show .yearrule{transition-delay:.30s}
+  .card.show .headline{transition-delay:.34s}
+  .card.show .foot{transition-delay:.48s}
+  .card.show .year{transition:opacity .9s ease .16s, transform 1s cubic-bezier(.2,.7,.2,1) .16s}
+
+  /* ---- controls (never part of the shareable frame) -------------- */
+  .controls{
+    width:100%;
+    max-width:var(--card-w);
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    padding:14px 4px 22px;
+  }
+  .scrub{display:flex;gap:2px;height:22px;align-items:flex-end}
+  .tick{
+    flex:1;height:7px;border-radius:2px;
+    background:color-mix(in oklab, var(--tk,#6b6458) 55%, #2a2620);
+    opacity:.5;cursor:pointer;transition:height .2s,opacity .2s;
+    border:none;padding:0;
+  }
+  .tick[data-on="1"]{opacity:.9}
+  .tick.cur{height:18px;opacity:1;background:var(--foil)}
+  .tick:hover{opacity:1}
+  .row{display:flex;align-items:center;justify-content:space-between;gap:14px}
+  .btns{display:flex;align-items:center;gap:8px}
+  button.ctl{
+    font-family:var(--geo);
+    background:rgba(255,255,255,.04);
+    color:var(--paper);
+    border:1px solid rgba(216,177,101,.28);
+    border-radius:999px;
+    height:40px;min-width:40px;padding:0 14px;
+    font-size:13px;letter-spacing:.08em;
+    display:inline-flex;align-items:center;justify-content:center;gap:7px;
+    cursor:pointer;transition:background .2s,border-color .2s,color .2s;
+  }
+  button.ctl:hover{background:rgba(216,177,101,.14);border-color:var(--foil)}
+  button.ctl:focus-visible{outline:2px solid var(--foil);outline-offset:2px}
+  .play{background:var(--foil);color:#241a08;border-color:var(--foil);font-weight:600}
+  .play:hover{background:#e7c281}
+  .seg{display:inline-flex;border:1px solid rgba(216,177,101,.28);border-radius:999px;overflow:hidden}
+  .seg button{
+    font-family:var(--geo);
+    background:transparent;color:var(--paper-dim);border:none;
+    height:40px;padding:0 16px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;
+    cursor:pointer;transition:background .2s,color .2s;
+  }
+  .seg button[aria-pressed="true"]{background:var(--foil);color:#241a08;font-weight:600}
+  .seg button:focus-visible{outline:2px solid var(--foil);outline-offset:-2px}
+  .count{font-size:12px;letter-spacing:.14em;color:var(--paper-dim);text-transform:uppercase;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .hint{text-align:center;font-size:11px;letter-spacing:.1em;color:#6f685c;text-transform:uppercase;padding-bottom:8px}
+
+  @media (max-width:520px){
+    :root{--card-w:min(92vw, calc(72vh * 9 / 16))}
+    .wordmark{letter-spacing:.32em}
+    .row{flex-wrap:wrap;justify-content:center}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .sheen::after{animation:none}
+    .card.show .anim{transition-duration:.001s}
+  }
+</style>
+
+<div class="topbar">
+  <span class="rule"></span>
+  <span class="wordmark">Rock Almanac</span>
+  <span class="rule r2"></span>
+</div>
+
+<div class="stage">
+  <article class="card" id="card" data-era="blues" aria-live="polite">
+    <div class="sheen"></div>
+    <div class="inner">
+      <div class="eyebrow anim">
+        <span class="era" id="era">The Blues Era</span>
+        <span class="dot"></span>
+        <span class="kind" id="kind">Formation</span>
+      </div>
+      <div class="spacer"></div>
+      <div class="when anim" id="when">July 1967</div>
+      <h1 class="year anim" id="year">1967</h1>
+      <div class="yearrule anim"></div>
+      <p class="headline anim" id="headline">Peter Green forms Fleetwood Mac</p>
+      <div class="foot anim">
+        <div class="sig"><span id="sigmark"></span><span class="lbl" id="siglbl">Major</span></div>
+        <div class="brand">Fleetwood Mac<small>1967 &#8212; 2022 &#183; every date sourced</small></div>
+      </div>
+    </div>
+  </article>
+</div>
+
+<div class="controls">
+  <div class="scrub" id="scrub" role="group" aria-label="Timeline"></div>
+  <div class="row">
+    <div class="btns">
+      <button class="ctl" id="prev" aria-label="Previous">&#8249;</button>
+      <button class="ctl play" id="play" aria-label="Play">&#9654; Play</button>
+      <button class="ctl" id="next" aria-label="Next">&#8250;</button>
+    </div>
+    <span class="count" id="count">01 / 50</span>
+    <div class="seg" role="group" aria-label="Filter">
+      <button id="fAll" aria-pressed="true">All</button>
+      <button id="fMaj" aria-pressed="false">&#9733; Majors</button>
+    </div>
+  </div>
+  <div class="hint">Space play/pause &#183; &#8592; &#8594; step &#183; tap a tick to jump &#183; screenshot the card for Instagram</div>
+</div>
+
+<script>
+const ERAS = {
+  blues:{label:"The Blues Era", accent:"#7fa6c9", ground:"#0a0d13"},
+  transition:{label:"The Transition", accent:"#cc9a55", ground:"#120f0a"},
+  classic:{label:"The Rumours Era", accent:"#d3968f", ground:"#140f0e"},
+  legacy:{label:"The Legacy Years", accent:"#9fa8b0", ground:"#0f1012"}
+};
+const KIND = {
+  FORMATION:"Formation", CONCERT:"Live", MEMBER_JOIN:"Joined", MEMBER_EXIT:"Departure",
+  MEMBER_RETURN:"Return", ALBUM_RELEASE:"Album", CHART_MILESTONE:"Chart", AWARD:"Award",
+  TOUR_START:"On Tour", TOUR_END:"Tour's End", MARRIAGE:"Marriage", DIVORCE:"Divorce",
+  REUNION:"Reunion", INCIDENT:"Incident", DEATH:"In Memoriam"
+};
+const SIG = {major:"Major", notable:"Notable", minor:"Minor"};
+function sigMark(s){
+  const c="var(--foil)";
+  if(s==="major") return `<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="${c}" d="M12 1.6l2.9 6.35 6.9.72-5.15 4.66 1.46 6.79L12 17.9 5.99 20.72l1.46-6.79L2.3 9.27l6.9-.72z"/></svg>`;
+  if(s==="notable") return `<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="${c}" d="M12 2l5 10-5 10-5-10z"/></svg>`;
+  return `<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="6.4" fill="none" stroke="${c}" stroke-width="2"/></svg>`;
+}
+// italicise album/song titles and quoted phrases in headlines
+function fmtHeadline(h){
+  h = h.replace(/"([^"]+)"/g, "&#8220;<em>$1</em>&#8221;");
+  const albums = ["Rumours","Then Play On","Mr. Wonderful","Kiln House","Future Games",
+    "Bare Trees","Penguin","Mystery to Me","Heroes Are Hard to Find","Tango in the Night",
+    "Buckingham Nicks","The Dance"];
+  for(const a of albums){
+    h = h.replace(new RegExp("\\b"+a.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")+"\\b(?![^<]*<\\/em>)"),
+      "<em>"+a+"</em>");
+  }
+  return h;
+}
+
+const DATA = [{"y":1967,"w":"July 1967","h":"Peter Green forms Fleetwood Mac","s":"major","t":"FORMATION","e":"blues"},{"y":1967,"w":"13 August 1967","h":"Fleetwood Mac play their first show at the Windsor Festival","s":"notable","t":"CONCERT","e":"blues"},{"y":1967,"w":"September 1967","h":"Bob Brunning steps aside for John McVie","s":"minor","t":"MEMBER_EXIT","e":"blues"},{"y":1967,"w":"September 1967","h":"John McVie joins the band that already bears his name","s":"notable","t":"MEMBER_JOIN","e":"blues"},{"y":1968,"w":"1968","h":"John McVie marries Christine Perfect","s":"notable","t":"MARRIAGE","e":"blues"},{"y":1968,"w":"24 February 1968","h":"Fleetwood Mac release Fleetwood Mac","s":"notable","t":"ALBUM_RELEASE","e":"blues"},{"y":1968,"w":"August 1968","h":"Eighteen-year-old Danny Kirwan joins as third guitarist","s":"notable","t":"MEMBER_JOIN","e":"blues"},{"y":1968,"w":"23 August 1968","h":"Fleetwood Mac release Mr. Wonderful","s":"notable","t":"ALBUM_RELEASE","e":"blues"},{"y":1969,"w":"January 1969","h":"Instrumental \"Albatross\" reaches UK #1","s":"major","t":"CHART_MILESTONE","e":"blues"},{"y":1969,"w":"19 September 1969","h":"Fleetwood Mac release Then Play On","s":"notable","t":"ALBUM_RELEASE","e":"blues"},{"y":1970,"w":"20 May 1970","h":"Peter Green leaves Fleetwood Mac","s":"major","t":"MEMBER_EXIT","e":"blues"},{"y":1970,"w":"1 August 1970","h":"Christine McVie joins Fleetwood Mac","s":"major","t":"MEMBER_JOIN","e":"blues"},{"y":1970,"w":"18 September 1970","h":"Fleetwood Mac release Kiln House","s":"minor","t":"ALBUM_RELEASE","e":"blues"},{"y":1971,"w":"1971","h":"Bob Welch becomes Fleetwood Mac's first American member","s":"notable","t":"MEMBER_JOIN","e":"transition"},{"y":1971,"w":"15 February 1971","h":"Jeremy Spencer disappears mid-tour to join the Children of God","s":"major","t":"MEMBER_EXIT","e":"transition"},{"y":1971,"w":"3 September 1971","h":"Fleetwood Mac release Future Games","s":"minor","t":"ALBUM_RELEASE","e":"transition"},{"y":1972,"w":"1972","h":"Dave Walker and Bob Weston join the lineup","s":"minor","t":"MEMBER_JOIN","e":"transition"},{"y":1972,"w":"March 1972","h":"Fleetwood Mac release Bare Trees","s":"minor","t":"ALBUM_RELEASE","e":"transition"},{"y":1972,"w":"August 1972","h":"Danny Kirwan is fired after a backstage breakdown","s":"notable","t":"MEMBER_EXIT","e":"transition"},{"y":1973,"w":"1973","h":"Dave Walker is asked to leave","s":"minor","t":"MEMBER_EXIT","e":"transition"},{"y":1973,"w":"March 1973","h":"Fleetwood Mac release Penguin","s":"minor","t":"ALBUM_RELEASE","e":"transition"},{"y":1973,"w":"5 September 1973","h":"Buckingham Nicks release Buckingham Nicks","s":"minor","t":"ALBUM_RELEASE","e":"transition"},{"y":1973,"w":"October 1973","h":"Bob Weston is fired over his affair with Jenny Boyd Fleetwood","s":"notable","t":"MEMBER_EXIT","e":"transition"},{"y":1973,"w":"15 October 1973","h":"Fleetwood Mac release Mystery to Me","s":"minor","t":"ALBUM_RELEASE","e":"transition"},{"y":1974,"w":"January 1974","h":"A fake Fleetwood Mac tours the US","s":"major","t":"INCIDENT","e":"transition"},{"y":1974,"w":"13 September 1974","h":"Fleetwood Mac release Heroes Are Hard to Find","s":"notable","t":"ALBUM_RELEASE","e":"transition"},{"y":1974,"w":"December 1974","h":"Bob Welch leaves, exhausted by the lawsuits and turnover","s":"notable","t":"MEMBER_EXIT","e":"transition"},{"y":1974,"w":"31 December 1974","h":"Lindsey Buckingham and Stevie Nicks join Fleetwood Mac","s":"major","t":"MEMBER_JOIN","e":"transition"},{"y":1975,"w":"11 July 1975","h":"Fleetwood Mac release Fleetwood Mac","s":"major","t":"ALBUM_RELEASE","e":"classic"},{"y":1976,"w":"1976","h":"John and Christine McVie divorce","s":"notable","t":"DIVORCE","e":"classic"},{"y":1976,"w":"4 September 1976","h":"Fleetwood Mac reaches US #1 over a year after release","s":"major","t":"CHART_MILESTONE","e":"classic"},{"y":1977,"w":"4 February 1977","h":"Fleetwood Mac release Rumours","s":"major","t":"ALBUM_RELEASE","e":"classic"},{"y":1977,"w":"24 February 1977","h":"Fleetwood Mac begin the Rumours Tour","s":"major","t":"TOUR_START","e":"classic"},{"y":1977,"w":"2 April 1977","h":"Rumours hits US #1 and stays there","s":"major","t":"CHART_MILESTONE","e":"classic"},{"y":1977,"w":"June 1977","h":"\"Dreams\" becomes the band's only US #1 single","s":"notable","t":"CHART_MILESTONE","e":"classic"},{"y":1978,"w":"23 February 1978","h":"Rumours wins the Grammy for Album of the Year","s":"major","t":"AWARD","e":"classic"},{"y":1978,"w":"30 August 1978","h":"The Rumours Tour comes to an end","s":"major","t":"TOUR_END","e":"classic"},{"y":1987,"w":"8 August 1987","h":"Lindsey Buckingham quits rather than tour Tango in the Night","s":"major","t":"MEMBER_EXIT","e":"classic"},{"y":1991,"w":"1991","h":"Stevie Nicks leaves Fleetwood Mac","s":"major","t":"MEMBER_EXIT","e":"legacy"},{"y":1997,"w":"1997","h":"Buckingham and Nicks rejoin Fleetwood Mac","s":"major","t":"MEMBER_RETURN","e":"legacy"},{"y":1997,"w":"1997","h":"The classic lineup reunites for The Dance","s":"major","t":"REUNION","e":"legacy"},{"y":1998,"w":"1998","h":"Christine McVie retires from the band","s":"notable","t":"MEMBER_EXIT","e":"legacy"},{"y":2011,"w":"18 October 2011","h":"Bob Brunning dies at 68","s":"minor","t":"DEATH","e":"legacy"},{"y":2012,"w":"3 January 2012","h":"Bob Weston dies at 64","s":"minor","t":"DEATH","e":"legacy"},{"y":2012,"w":"7 June 2012","h":"Bob Welch dies at 66","s":"notable","t":"DEATH","e":"legacy"},{"y":2014,"w":"January 2014","h":"Christine McVie rejoins after sixteen years away","s":"notable","t":"MEMBER_RETURN","e":"legacy"},{"y":2018,"w":"January 2018","h":"Lindsey Buckingham is fired from Fleetwood Mac","s":"major","t":"MEMBER_EXIT","e":"legacy"},{"y":2018,"w":"8 June 2018","h":"Danny Kirwan dies at 68","s":"notable","t":"DEATH","e":"legacy"},{"y":2020,"w":"25 July 2020","h":"Peter Green dies at 73","s":"major","t":"DEATH","e":"legacy"},{"y":2022,"w":"30 November 2022","h":"Christine McVie dies at 79","s":"major","t":"DEATH","e":"legacy"}];
+
+let list = DATA.slice();
+let i = 0, playing=false, timer=null, majorsOnly=false;
+const SPEED = 3400;
+
+const el = id => document.getElementById(id);
+const card = el("card");
+const inner = document.querySelector(".inner");
+
+// Headlines vary from 3 words to 11. Keep the big dramatic size for most,
+// and shrink only the long ones until the footer is safe inside the card.
+function autofit(){
+  const h = el("headline");
+  const H = card.clientHeight;
+  let px = H * 0.074;              // 7.4cqh baseline
+  const min = H * 0.046;
+  h.style.fontSize = px + "px";
+  let guard = 0;
+  while(inner.scrollHeight > H && px > min && guard < 60){
+    px -= H * 0.0025;
+    h.style.fontSize = px + "px";
+    guard++;
+  }
+}
+
+function buildScrub(){
+  const s = el("scrub"); s.innerHTML="";
+  list.forEach((ev,idx)=>{
+    const b=document.createElement("button");
+    b.className="tick"; b.style.setProperty("--tk", ERAS[ev.e].accent);
+    b.dataset.on = ev.s==="major" ? "1":"0";
+    b.setAttribute("aria-label", ev.y+" "+ev.h);
+    b.onclick=()=>{stop();go(idx);};
+    s.appendChild(b);
+  });
+}
+function paintScrub(){
+  [...el("scrub").children].forEach((t,idx)=>t.classList.toggle("cur", idx===i));
+}
+function render(){
+  const ev=list[i];
+  const era=ERAS[ev.e];
+  card.dataset.era=ev.e;
+  card.style.setProperty("--accent", era.accent);
+  card.style.setProperty("--ground", era.ground);
+  card.style.background=era.ground;
+  el("era").textContent=era.label;
+  el("kind").textContent=KIND[ev.t]||ev.t;
+  el("when").textContent=ev.w;
+  el("year").textContent=ev.y;
+  el("headline").innerHTML=fmtHeadline(ev.h);
+  el("sigmark").innerHTML=sigMark(ev.s);
+  el("siglbl").textContent=SIG[ev.s];
+  el("count").textContent=String(i+1).padStart(2,"0")+" / "+String(list.length).padStart(2,"0");
+  autofit();
+  // restart entrance animation
+  card.classList.remove("show"); void card.offsetWidth; card.classList.add("show");
+  paintScrub();
+}
+function go(n){ i=(n+list.length)%list.length; render(); }
+function next(){ go(i+1); }
+function prev(){ stop(); go(i-1); }
+function play(){ playing=true; el("play").innerHTML="&#10074;&#10074; Pause"; el("play").setAttribute("aria-label","Pause");
+  clearInterval(timer); timer=setInterval(next, SPEED); }
+function stop(){ playing=false; el("play").innerHTML="&#9654; Play"; el("play").setAttribute("aria-label","Play"); clearInterval(timer); }
+function toggle(){ playing?stop():play(); }
+
+function setFilter(maj){
+  majorsOnly=maj;
+  const cur=list[i];
+  list = maj ? DATA.filter(e=>e.s==="major") : DATA.slice();
+  el("fAll").setAttribute("aria-pressed", String(!maj));
+  el("fMaj").setAttribute("aria-pressed", String(maj));
+  // stay near the same moment
+  let n = list.findIndex(e=>e.y>=cur.y);
+  i = n<0 ? 0 : n;
+  buildScrub(); render();
+}
+
+el("next").onclick=()=>{stop();next();};
+el("prev").onclick=prev;
+el("play").onclick=toggle;
+el("fAll").onclick=()=>setFilter(false);
+el("fMaj").onclick=()=>setFilter(true);
+document.addEventListener("keydown",e=>{
+  if(e.code==="Space"){e.preventDefault();toggle();}
+  else if(e.code==="ArrowRight"){stop();next();}
+  else if(e.code==="ArrowLeft"){prev();}
+});
+
+buildScrub();
+render();
+</script>
