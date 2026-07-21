@@ -34,6 +34,7 @@ Known limits:
 - All sources are tertiary. Upgrading key facts to primary/secondary
   sources (band memoirs, liner notes, Billboard archives) is the next
   research step.
-- Setlist.fm was consulted but is not yet cited: its full 1977 tour
-  history sits behind pagination, and bulk access needs an API key.
+- Setlist.fm (via its API) cross-confirms the Rumours Tour date range
+  to the day; its 117 documented shows vs. Wikipedia's 96-show count
+  is recorded as a disagreement on the tour record.
 - Tour leg-level detail for the Rumours Tour is still to be entered.

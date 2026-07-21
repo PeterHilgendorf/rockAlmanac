@@ -2,3 +2,4 @@
 @eaDir/
 #recycle/
 Thumbs.db
+.secrets/

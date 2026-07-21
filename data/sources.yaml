@@ -172,3 +172,16 @@
   url: https://en.wikipedia.org/wiki/List_of_Billboard_200_number-one_albums_of_1977
   accessed_date: 2026-07-21
   reliability: tertiary
+
+- id: sf-fleetwood-mac
+  source_type: website
+  title: Fleetwood Mac — Setlist.fm concert history
+  publisher: setlist.fm
+  url: https://www.setlist.fm/setlists/fleetwood-mac-7bd6bef0.html
+  accessed_date: 2026-07-21
+  reliability: tertiary
+  notes: >
+    Crowd-sourced setlist database, queried via the Setlist.fm API by
+    MusicBrainz artist ID. Used to cross-confirm the Rumours Tour date
+    range: 117 shows tagged with that tour, spanning 24 Feb 1977 to
+    30 Aug 1978.

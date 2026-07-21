@@ -11,7 +11,14 @@
   supporting_album_id: rumours-1977
   regions: [North America, Europe, Japan, Oceania]
   show_count: 96
-  source_ids: [wp-rumours-tour]
+  source_ids: [wp-rumours-tour, sf-fleetwood-mac]
   notes: >
-    Five legs per Wikipedia — three North American plus Europe and
-    Japan/Oceania. Leg-level breakdown still to be entered.
+    Start and end dates cross-confirmed to the day by Setlist.fm: its
+    earliest tagged show is 24 Feb 1977 (Nassau Veterans Memorial
+    Coliseum, Uniondale, NY) and its latest is 30 Aug 1978 (Baton
+    Rouge, LA). Show count is disputed: Wikipedia gives 96 while
+    Setlist.fm documents 117 shows tagged to this tour — the wider
+    figure includes crowd-logged dates outside Wikipedia's summary
+    count. Kept at 96 pending a primary source. Five legs per
+    Wikipedia — three North American plus Europe and Japan/Oceania;
+    leg-level breakdown still to be entered.
