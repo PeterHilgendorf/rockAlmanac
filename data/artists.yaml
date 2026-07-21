@@ -1,4 +1,5 @@
 # Rock Almanac — artists
+# Verified 2026-07-21 against Wikipedia, MusicBrainz, and Discogs.
 
 - id: fleetwood-mac
   name: Fleetwood Mac
@@ -7,14 +8,20 @@
   formed_date: 1967-07-01
   formed_precision: month
   formed_location: London, England
-  status: active
+  disbanded_date: 2022-01-01
+  disbanded_precision: year
+  status: disbanded
   genres: [blues rock, pop rock, soft rock]
+  musicbrainz_id: bd13909f-1c29-4c27-a874-d4aaf27c5b1a
+  discogs_id: "47333"
   wikipedia_url: https://en.wikipedia.org/wiki/Fleetwood_Mac
-  source_ids: [wp-fleetwood-mac]
+  source_ids: [wp-fleetwood-mac, mb-fleetwood-mac, dg-fleetwood-mac]
   notes: >
-    No formal disbandment has been announced, but the band has been
-    inactive since Christine McVie's death in 2022; Mick Fleetwood and
-    Stevie Nicks have both said the band as it was is done.
+    Wikipedia gives years active as 1967–1995 and 1997–2022, and
+    MusicBrainz also marks the group ended in 2022. No formal
+    disbandment was ever announced: activity stopped with Christine
+    McVie's death, and in 2024 Stevie Nicks said she believed the band
+    would not continue.
 
 - id: buckingham-nicks
   name: Buckingham Nicks
@@ -25,9 +32,11 @@
   disbanded_date: 1974-12-01
   disbanded_precision: month
   genres: [folk rock, soft rock]
+  musicbrainz_id: 4b1bf05d-0e3c-44a3-9fc8-ad088fc25797
+  discogs_id: "1360440"
   wikipedia_url: https://en.wikipedia.org/wiki/Buckingham_Nicks
-  source_ids: [wp-buckingham-nicks]
+  source_ids: [wp-buckingham-nicks, mb-buckingham-nicks]
   notes: >
     The duo dissolved when both members joined Fleetwood Mac; their lone
     album is why Mick Fleetwood heard Lindsey Buckingham's guitar at
-    Sound City.
+    Sound City. MusicBrainz gives the duo's span as 1972–1974.

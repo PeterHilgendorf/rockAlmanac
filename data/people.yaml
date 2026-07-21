@@ -1,5 +1,7 @@
 # Rock Almanac — people
 # Humans exist independently of any band. Membership lives in memberships.yaml.
+# Verified 2026-07-21 against the cited Wikipedia pages; birth/death dates
+# cross-checked against MusicBrainz.
 
 - id: peter-green
   name: Peter Green
@@ -12,6 +14,7 @@
   death_precision: day
   death_place: Canvey Island, Essex, England
   primary_roles: [guitar, vocals, songwriter]
+  musicbrainz_id: 9a6adb63-10a9-417a-8cd9-3b0fcf5475c5
   source_ids: [wp-peter-green]
   notes: >
     Founded Fleetwood Mac and named it after its rhythm section. Left in
@@ -26,6 +29,7 @@
   birth_precision: day
   birth_place: Redruth, Cornwall, England
   primary_roles: [drums]
+  musicbrainz_id: 5191f332-8c44-4775-a070-d517cf7e5ecb
   source_ids: [wp-mick-fleetwood]
   notes: The only member present on every Fleetwood Mac album.
 
@@ -35,39 +39,46 @@
   legal_name: John Graham McVie
   birth_date: 1945-11-26
   birth_precision: day
-  birth_place: Ealing, London, England
+  birth_place: Ealing, Middlesex, England
   primary_roles: [bass]
+  musicbrainz_id: c78f0746-ea5d-44c0-92ee-f32745951345
   source_ids: [wp-john-mcvie]
   notes: The "Mac" in Fleetwood Mac.
 
 - id: jeremy-spencer
   name: Jeremy Spencer
   sort_name: Spencer, Jeremy
+  legal_name: Jeremy Cedric Spencer
   birth_date: 1948-07-04
   birth_precision: day
-  birth_place: West Hartlepool, County Durham, England
+  birth_place: Hartlepool, County Durham, England
   primary_roles: [slide guitar, vocals]
+  musicbrainz_id: 6e82e5d9-c7ae-4de1-8691-be6e870b294c
   source_ids: [wp-jeremy-spencer]
 
 - id: bob-brunning
   name: Bob Brunning
   sort_name: Brunning, Bob
+  legal_name: Robert Brunning
   birth_date: 1943-06-29
   birth_precision: day
-  birth_place: Bournemouth, Hampshire, England
+  birth_place: Bournemouth, England
   death_date: 2011-10-18
   death_precision: day
   death_place: London, England
   primary_roles: [bass]
+  musicbrainz_id: ec166c16-75f7-4312-8308-135c4b6b9e5a
   source_ids: [wp-bob-brunning]
   notes: >
     Founding bassist, hired with the understanding that he would step
     aside if John McVie could be persuaded to join — which he was,
-    weeks later. Brunning went on to a career in teaching and writing.
+    weeks later. Played bass on "Long Grey Mare" on the debut album.
+    Went on to a career in teaching and writing.
 
 - id: danny-kirwan
   name: Danny Kirwan
   sort_name: Kirwan, Danny
+  legal_name: Daniel David Langran
   birth_date: 1950-05-13
   birth_precision: day
   birth_place: Brixton, London, England
@@ -75,6 +86,7 @@
   death_precision: day
   death_place: London, England
   primary_roles: [guitar, vocals, songwriter]
+  musicbrainz_id: 2dd16885-93df-4893-85ad-18dca165be6b
   source_ids: [wp-danny-kirwan]
 
 - id: christine-mcvie
@@ -83,11 +95,12 @@
   legal_name: Christine Anne McVie (née Perfect)
   birth_date: 1943-07-12
   birth_precision: day
-  birth_place: Bouth, Lancashire, England
+  birth_place: Greenodd, Lancashire, England
   death_date: 2022-11-30
   death_precision: day
   death_place: London, England
   primary_roles: [keyboards, vocals, songwriter]
+  musicbrainz_id: 21551f7d-93f2-4cb7-ba71-7f260058e923
   source_ids: [wp-christine-mcvie]
   notes: >
     Recorded as Christine Perfect with Chicken Shack before joining
@@ -96,13 +109,15 @@
 - id: bob-welch
   name: Bob Welch
   sort_name: Welch, Bob
+  legal_name: Robert Lawrence Welch Jr.
   birth_date: 1945-08-31
   birth_precision: day
-  birth_place: Los Angeles, California, US
+  birth_place: Hollywood, California, US
   death_date: 2012-06-07
   death_precision: day
-  death_place: Nashville, Tennessee, US
+  death_place: Antioch, Tennessee, US
   primary_roles: [guitar, vocals, songwriter]
+  musicbrainz_id: c7c6fc3e-4e50-4c43-b0c4-f18a66a1b3c0
   source_ids: [wp-bob-welch]
   notes: >
     The band's first American member; bridged the British blues era and
@@ -122,15 +137,16 @@
 - id: bob-weston
   name: Bob Weston
   sort_name: Weston, Bob
+  legal_name: Robert Joseph Weston
   birth_date: 1947-11-01
   birth_precision: day
   birth_place: Plymouth, Devon, England
   death_date: 2012-01-03
   death_precision: day
-  death_place: London, England
+  death_place: Brent Cross, London, England
   primary_roles: [guitar]
   source_ids: [wp-bob-weston]
-  notes: Death date is the date he was found; he died at home in Brent.
+  notes: Death date is the date he was found dead at home.
 
 - id: lindsey-buckingham
   name: Lindsey Buckingham
@@ -140,6 +156,7 @@
   birth_precision: day
   birth_place: Palo Alto, California, US
   primary_roles: [guitar, vocals, songwriter, producer]
+  musicbrainz_id: 5d12875c-a197-43b2-8f29-41dc0ad895c3
   source_ids: [wp-lindsey-buckingham]
 
 - id: stevie-nicks
@@ -150,7 +167,8 @@
   birth_precision: day
   birth_place: Phoenix, Arizona, US
   primary_roles: [vocals, songwriter]
+  musicbrainz_id: b7f2cca2-72c6-41fb-ae33-53370fc62fe7
   source_ids: [wp-stevie-nicks]
   notes: >
     Also maintains a major solo career; the first woman inducted twice
-    into the Rock and Roll Hall of Fame.
+    into the Rock and Roll Hall of Fame (Fleetwood Mac 1998, solo 2019).

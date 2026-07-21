@@ -4,11 +4,14 @@
 - id: rumours-tour-1977
   artist_id: fleetwood-mac
   name: Rumours Tour
-  start_date: 1977-02-01
-  start_precision: month
-  end_date: 1978-08-01
-  end_precision: month
+  start_date: 1977-02-24
+  start_precision: day
+  end_date: 1978-08-30
+  end_precision: day
   supporting_album_id: rumours-1977
   regions: [North America, Europe, Japan, Oceania]
+  show_count: 96
   source_ids: [wp-rumours-tour]
-  notes: Leg-level detail pending verification.
+  notes: >
+    Five legs per Wikipedia — three North American plus Europe and
+    Japan/Oceania. Leg-level breakdown still to be entered.

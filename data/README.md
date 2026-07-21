@@ -20,12 +20,20 @@ python3 scripts/validate.py
 | venues.yaml | venue |
 | relationships.yaml | relationship |
 
-## Status: draft
+## Status: verified against tertiary sources (2026-07-21)
 
-The initial Fleetwood Mac records were drafted from general reference
-knowledge and cited to the Wikipedia pages listed in sources.yaml.
-**A verification pass against those pages has not happened yet.** Dates
-carry honest precision (year/month where the day isn't certain), but
-until each record has been checked against its cited source, treat this
-dataset as a working draft. Upgrading key facts to primary/secondary
-sources (band memoirs, liner notes) is the step after that.
+Every record has been checked against its cited Wikipedia page, with
+release dates, IDs, and birth/death dates cross-checked against
+MusicBrainz and Discogs (`musicbrainz_id` / `discogs_id` fields carry
+the pointers). Where sources disagree — Nicks' departure year, the
+Mystery to Me release date — the disagreement is recorded in `notes`
+rather than silently resolved, per CONVENTIONS.md.
+
+Known limits:
+
+- All sources are tertiary. Upgrading key facts to primary/secondary
+  sources (band memoirs, liner notes, Billboard archives) is the next
+  research step.
+- Setlist.fm was consulted but is not yet cited: its full 1977 tour
+  history sits behind pagination, and bulk access needs an API key.
+- Tour leg-level detail for the Rumours Tour is still to be entered.

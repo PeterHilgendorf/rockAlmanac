@@ -20,7 +20,7 @@
 - id: wp-rumours
   source_type: wikipedia
   title: Rumours (album)
-  url: https://en.wikipedia.org/wiki/Rumours
+  url: https://en.wikipedia.org/wiki/Rumours_(album)
   accessed_date: 2026-07-21
   reliability: tertiary
 
@@ -96,8 +96,8 @@
 
 - id: wp-dave-walker
   source_type: wikipedia
-  title: Dave Walker (singer)
-  url: https://en.wikipedia.org/wiki/Dave_Walker_(singer)
+  title: Dave Walker
+  url: https://en.wikipedia.org/wiki/Dave_Walker
   accessed_date: 2026-07-21
   reliability: tertiary
 
@@ -119,5 +119,56 @@
   source_type: wikipedia
   title: Stevie Nicks
   url: https://en.wikipedia.org/wiki/Stevie_Nicks
+  accessed_date: 2026-07-21
+  reliability: tertiary
+
+# ---- Added during the 2026-07-21 verification pass -------------------
+
+- id: mb-fleetwood-mac
+  source_type: musicbrainz
+  title: Fleetwood Mac — MusicBrainz artist entry
+  url: https://musicbrainz.org/artist/bd13909f-1c29-4c27-a874-d4aaf27c5b1a
+  accessed_date: 2026-07-21
+  reliability: tertiary
+
+- id: mb-buckingham-nicks
+  source_type: musicbrainz
+  title: Buckingham Nicks — MusicBrainz artist entry
+  url: https://musicbrainz.org/artist/4b1bf05d-0e3c-44a3-9fc8-ad088fc25797
+  accessed_date: 2026-07-21
+  reliability: tertiary
+
+- id: dg-fleetwood-mac
+  source_type: discogs
+  title: Fleetwood Mac — Discogs artist entry
+  url: https://www.discogs.com/artist/47333
+  accessed_date: 2026-07-21
+  reliability: tertiary
+
+- id: wp-albatross
+  source_type: wikipedia
+  title: Albatross (instrumental)
+  url: https://en.wikipedia.org/wiki/Albatross_(instrumental)
+  accessed_date: 2026-07-21
+  reliability: tertiary
+
+- id: wp-20th-grammy-awards
+  source_type: wikipedia
+  title: 20th Annual Grammy Awards
+  url: https://en.wikipedia.org/wiki/20th_Annual_Grammy_Awards
+  accessed_date: 2026-07-21
+  reliability: tertiary
+
+- id: wp-billboard-200-number-ones-1976
+  source_type: wikipedia
+  title: List of Billboard 200 number-one albums of 1976
+  url: https://en.wikipedia.org/wiki/List_of_Billboard_200_number-one_albums_of_1976
+  accessed_date: 2026-07-21
+  reliability: tertiary
+
+- id: wp-billboard-200-number-ones-1977
+  source_type: wikipedia
+  title: List of Billboard 200 number-one albums of 1977
+  url: https://en.wikipedia.org/wiki/List_of_Billboard_200_number-one_albums_of_1977
   accessed_date: 2026-07-21
   reliability: tertiary

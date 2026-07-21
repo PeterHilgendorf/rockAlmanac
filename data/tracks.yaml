@@ -1,11 +1,13 @@
 # Rock Almanac — tracks
 # Optional depth, added where discography detail matters. Rumours first.
-# Durations omitted pending verification against liner notes.
+# Writers, durations, and singles verified 2026-07-21 against the
+# Rumours Wikipedia article.
 
 - id: rumours-1977--second-hand-news
   album_id: rumours-1977
   title: Second Hand News
   position: 1
+  duration: "2:43"
   writer_ids: [lindsey-buckingham]
   source_ids: [wp-rumours]
 
@@ -13,16 +15,19 @@
   album_id: rumours-1977
   title: Dreams
   position: 2
+  duration: "4:14"
   writer_ids: [stevie-nicks]
   lead_vocal_ids: [stevie-nicks]
   single: true
   source_ids: [wp-rumours]
-  notes: The band's only US #1 single.
+  notes: >
+    Released as a single in March 1977; the band's only US #1 single.
 
 - id: rumours-1977--never-going-back-again
   album_id: rumours-1977
   title: Never Going Back Again
   position: 3
+  duration: "2:02"
   writer_ids: [lindsey-buckingham]
   source_ids: [wp-rumours]
 
@@ -30,14 +35,17 @@
   album_id: rumours-1977
   title: Don't Stop
   position: 4
+  duration: "3:11"
   writer_ids: [christine-mcvie]
   single: true
   source_ids: [wp-rumours]
+  notes: Released as a single in April 1977.
 
 - id: rumours-1977--go-your-own-way
   album_id: rumours-1977
   title: Go Your Own Way
   position: 5
+  duration: "3:38"
   writer_ids: [lindsey-buckingham]
   lead_vocal_ids: [lindsey-buckingham]
   single: true
@@ -48,6 +56,7 @@
   album_id: rumours-1977
   title: Songbird
   position: 6
+  duration: "3:20"
   writer_ids: [christine-mcvie]
   lead_vocal_ids: [christine-mcvie]
   source_ids: [wp-rumours]
@@ -56,6 +65,7 @@
   album_id: rumours-1977
   title: The Chain
   position: 7
+  duration: "4:28"
   writer_ids: [lindsey-buckingham, stevie-nicks, christine-mcvie, john-mcvie, mick-fleetwood]
   source_ids: [wp-rumours]
   notes: The only song credited to all five members.
@@ -64,15 +74,18 @@
   album_id: rumours-1977
   title: You Make Loving Fun
   position: 8
+  duration: "3:31"
   writer_ids: [christine-mcvie]
   lead_vocal_ids: [christine-mcvie]
   single: true
   source_ids: [wp-rumours]
+  notes: Released as a single in September 1977.
 
 - id: rumours-1977--i-dont-want-to-know
   album_id: rumours-1977
   title: I Don't Want to Know
   position: 9
+  duration: "3:11"
   writer_ids: [stevie-nicks]
   source_ids: [wp-rumours]
 
@@ -80,6 +93,7 @@
   album_id: rumours-1977
   title: Oh Daddy
   position: 10
+  duration: "3:54"
   writer_ids: [christine-mcvie]
   source_ids: [wp-rumours]
 
@@ -87,6 +101,7 @@
   album_id: rumours-1977
   title: Gold Dust Woman
   position: 11
+  duration: "4:51"
   writer_ids: [stevie-nicks]
   lead_vocal_ids: [stevie-nicks]
   source_ids: [wp-rumours]

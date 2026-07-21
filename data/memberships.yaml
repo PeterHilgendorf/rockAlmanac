@@ -10,10 +10,11 @@
   roles: [guitar, vocals]
   start_date: 1967-07-01
   start_precision: month
-  end_date: 1970-05-01
-  end_precision: month
+  end_date: 1970-05-20
+  end_precision: day
   exit_reason: quit
   source_ids: [wp-fleetwood-mac, wp-peter-green]
+  notes: End date is his final show with the band, 20 May 1970.
 
 - id: mick-fleetwood-fleetwood-mac-1
   person_id: mick-fleetwood
@@ -80,13 +81,16 @@
   artist_id: fleetwood-mac
   founding: false
   roles: [keyboards, vocals]
-  start_date: 1970-01-01
-  start_precision: year
+  start_date: 1970-08-01
+  start_precision: day
   end_date: 1998-01-01
   end_precision: year
   exit_reason: quit
   source_ids: [wp-fleetwood-mac, wp-christine-mcvie]
-  notes: Retired from the band after The Dance tour.
+  notes: >
+    Start date is her first gig as an official member, 1 August 1970 in
+    New Orleans; she had already played on Kiln House uncredited.
+    Retired from the band after The Dance tour.
 
 - id: bob-welch-fleetwood-mac-1
   person_id: bob-welch
@@ -105,21 +109,23 @@
   artist_id: fleetwood-mac
   founding: false
   roles: [vocals, harmonica]
-  start_date: 1972-01-01
-  start_precision: year
-  end_date: 1973-06-01
-  end_precision: month
+  start_date: 1972-08-01
+  start_precision: month
+  end_date: 1973-01-01
+  end_precision: year
   exit_reason: fired
   source_ids: [wp-fleetwood-mac, wp-dave-walker]
-  notes: Asked to leave during the Mystery to Me sessions.
+  notes: >
+    Asked to leave in mid-1973, during the Mystery to Me sessions — the
+    other members felt his vocal style and attitude did not fit.
 
 - id: bob-weston-fleetwood-mac-1
   person_id: bob-weston
   artist_id: fleetwood-mac
   founding: false
   roles: [guitar]
-  start_date: 1972-01-01
-  start_precision: year
+  start_date: 1972-09-01
+  start_precision: month
   end_date: 1973-10-01
   end_precision: month
   exit_reason: fired
@@ -137,11 +143,13 @@
   roles: [guitar, vocals]
   start_date: 1974-12-31
   start_precision: day
-  end_date: 1987-08-01
-  end_precision: month
+  end_date: 1987-08-08
+  end_precision: day
   exit_reason: quit
   source_ids: [wp-fleetwood-mac, wp-lindsey-buckingham]
-  notes: Quit rather than tour behind Tango in the Night.
+  notes: >
+    Quit rather than tour behind Tango in the Night — he left the day
+    after the 7 August 1987 band meeting at Christine McVie's house.
 
 - id: stevie-nicks-fleetwood-mac-1
   person_id: stevie-nicks
@@ -157,7 +165,9 @@
   notes: >
     Left after a dispute with Mick Fleetwood over the rights to
     "Silver Springs"; the classic lineup reconvened once for Bill
-    Clinton's 1993 inaugural gala.
+    Clinton's 1993 inaugural gala. Sources disagree on the exact end:
+    Wikipedia's Fleetwood Mac article says she left in 1991, while her
+    own article ties it to the end of the Behind the Mask tour in 1990.
 
 - id: lindsey-buckingham-fleetwood-mac-2
   person_id: lindsey-buckingham
@@ -166,10 +176,13 @@
   roles: [guitar, vocals]
   start_date: 1997-01-01
   start_precision: year
-  end_date: 2018-04-01
+  end_date: 2018-01-01
   end_precision: month
   exit_reason: fired
   source_ids: [wp-fleetwood-mac, wp-lindsey-buckingham]
+  notes: >
+    Dismissed following the MusiCares Person of the Year performance in
+    January 2018; the firing became public that April.
 
 - id: stevie-nicks-fleetwood-mac-2
   person_id: stevie-nicks
@@ -191,6 +204,9 @@
   end_precision: day
   exit_reason: died
   source_ids: [wp-fleetwood-mac, wp-christine-mcvie]
+  notes: >
+    Mick Fleetwood announced her return on 11 January 2014; it was made
+    official two days later.
 
 # ---- Buckingham Nicks ------------------------------------------------
 

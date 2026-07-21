@@ -1,6 +1,9 @@
 # Rock Almanac — albums
 # peak_chart notes: the band's primary chart was the UK Albums Chart in
 # the Blue Horizon era, US Billboard 200 from Kiln House onward.
+# Verified 2026-07-21: release dates against Wikipedia's discography page
+# and MusicBrainz release groups; musicbrainz_id is the release-group
+# MBID; discogs_id is the Discogs master number.
 
 - id: fleetwood-mac-1968
   artist_id: fleetwood-mac
@@ -11,8 +14,10 @@
   label: Blue Horizon
   peak_position: 4
   peak_chart: UK Albums Chart
-  chart_peaks: {UK: 4}
-  source_ids: [wp-fleetwood-mac-discography]
+  chart_peaks: {UK: 4, US: 198}
+  musicbrainz_id: ccac79cd-3df4-3fd1-80bd-a328dc049664
+  discogs_id: "38785"
+  source_ids: [wp-fleetwood-mac-discography, mb-fleetwood-mac]
   notes: >
     Billed as Peter Green's Fleetwood Mac. Stayed on the UK chart for
     over a year without a hit single.
@@ -27,7 +32,9 @@
   peak_position: 10
   peak_chart: UK Albums Chart
   chart_peaks: {UK: 10}
-  source_ids: [wp-fleetwood-mac-discography]
+  musicbrainz_id: 265dda3d-802e-3e21-b133-34ac7e064146
+  discogs_id: "38715"
+  source_ids: [wp-fleetwood-mac-discography, mb-fleetwood-mac]
 
 - id: then-play-on-1969
   artist_id: fleetwood-mac
@@ -38,8 +45,10 @@
   label: Reprise
   peak_position: 6
   peak_chart: UK Albums Chart
-  chart_peaks: {UK: 6}
-  source_ids: [wp-fleetwood-mac-discography]
+  chart_peaks: {UK: 6, US: 109}
+  musicbrainz_id: f8d4b05b-e5dc-3c67-aed8-13cac163b06c
+  discogs_id: "38756"
+  source_ids: [wp-fleetwood-mac-discography, mb-fleetwood-mac]
   notes: First album with Danny Kirwan; last with Peter Green.
 
 - id: kiln-house-1970
@@ -52,7 +61,9 @@
   peak_position: 69
   peak_chart: US Billboard 200
   chart_peaks: {US: 69, UK: 39}
-  source_ids: [wp-fleetwood-mac-discography]
+  musicbrainz_id: 612a2c86-9e8f-385b-89a3-c22f00d9a44f
+  discogs_id: "38682"
+  source_ids: [wp-fleetwood-mac-discography, mb-fleetwood-mac]
   notes: >
     First album after Peter Green's departure. Christine McVie played
     and sang on it uncredited, joining officially soon after.
@@ -67,7 +78,9 @@
   peak_position: 91
   peak_chart: US Billboard 200
   chart_peaks: {US: 91}
-  source_ids: [wp-fleetwood-mac-discography]
+  musicbrainz_id: 10510365-3d3a-3ec9-8ba1-e210432c8234
+  discogs_id: "38688"
+  source_ids: [wp-fleetwood-mac-discography, mb-fleetwood-mac]
   notes: First album with Bob Welch and a credited Christine McVie.
 
 - id: bare-trees-1972
@@ -80,7 +93,9 @@
   peak_position: 70
   peak_chart: US Billboard 200
   chart_peaks: {US: 70}
-  source_ids: [wp-fleetwood-mac-discography]
+  musicbrainz_id: 22b4b56c-47e0-31ea-9762-99ce3414fb20
+  discogs_id: "38626"
+  source_ids: [wp-fleetwood-mac-discography, mb-fleetwood-mac]
   notes: Danny Kirwan's last album with the band.
 
 - id: penguin-1973
@@ -93,32 +108,42 @@
   peak_position: 49
   peak_chart: US Billboard 200
   chart_peaks: {US: 49}
-  source_ids: [wp-fleetwood-mac-discography]
+  musicbrainz_id: 794390eb-7d85-3427-ac16-0973a8998133
+  discogs_id: "38841"
+  source_ids: [wp-fleetwood-mac-discography, mb-fleetwood-mac]
 
 - id: mystery-to-me-1973
   artist_id: fleetwood-mac
   title: Mystery to Me
-  release_date: 1973-10-01
-  release_precision: month
+  release_date: 1973-10-15
+  release_precision: day
   album_type: studio
   label: Reprise
   peak_position: 67
   peak_chart: US Billboard 200
   chart_peaks: {US: 67}
-  source_ids: [wp-fleetwood-mac-discography]
-  notes: Includes "Hypnotized", a US FM-radio staple for Bob Welch.
+  musicbrainz_id: c7ffbb18-ced8-3fb3-bc77-72fc0cc3f14b
+  discogs_id: "38846"
+  source_ids: [wp-fleetwood-mac-discography, mb-fleetwood-mac]
+  notes: >
+    Includes "Hypnotized", a US FM-radio staple for Bob Welch. Sources
+    disagree on the release date: Wikipedia gives 15 October 1973;
+    MusicBrainz's first-release-date of 11 January 1973 is inconsistent
+    with the recording timeline and looks like a data error there.
 
 - id: heroes-are-hard-to-find-1974
   artist_id: fleetwood-mac
   title: Heroes Are Hard to Find
-  release_date: 1974-09-01
-  release_precision: month
+  release_date: 1974-09-13
+  release_precision: day
   album_type: studio
   label: Reprise
   peak_position: 34
   peak_chart: US Billboard 200
   chart_peaks: {US: 34}
-  source_ids: [wp-fleetwood-mac-discography]
+  musicbrainz_id: a0d6e4c6-f7cd-3245-ac2d-aba871b9d353
+  discogs_id: "38823"
+  source_ids: [wp-fleetwood-mac-discography, mb-fleetwood-mac]
   notes: Bob Welch's last album; the band's first recorded in Los Angeles.
 
 - id: fleetwood-mac-1975
@@ -131,10 +156,12 @@
   peak_position: 1
   peak_chart: US Billboard 200
   chart_peaks: {US: 1, UK: 23}
-  source_ids: [wp-fleetwood-mac-discography]
+  musicbrainz_id: 6b5d9bf1-f496-34b5-9488-7df2533d6208
+  discogs_id: "38776"
+  source_ids: [wp-fleetwood-mac-discography, mb-fleetwood-mac]
   notes: >
     The "White Album" — first with Buckingham and Nicks. Reached US #1
-    more than a year after release, in September 1976.
+    more than a year after release, on the chart of 4 September 1976.
 
 - id: rumours-1977
   artist_id: fleetwood-mac
@@ -144,28 +171,33 @@
   album_type: studio
   label: Warner Bros.
   producers: [Fleetwood Mac, Ken Caillat, Richard Dashut]
-  recorded_at: [Record Plant, Sausalito]
+  recorded_at: ["Record Plant (Sausalito)", "Record Plant (Los Angeles)", "Wally Heider Studios (Hollywood)", "Criteria Studios (Miami)"]
   peak_position: 1
   peak_chart: US Billboard 200
-  debut_position: 10
+  debut_position: 7
   chart_peaks: {US: 1, UK: 1}
-  certifications: [RIAA 20x Platinum]
-  source_ids: [wp-rumours]
+  certifications: [RIAA 21x Platinum]
+  musicbrainz_id: 416bb5e5-c7d1-3977-8fd7-7c9daf6c2be6
+  discogs_id: "38722"
+  source_ids: [wp-rumours, mb-fleetwood-mac]
   notes: >
     Recorded while both couples in the band were breaking up and
     Fleetwood's marriage was ending; one of the best-selling albums
-    ever made.
+    ever made. 31 non-consecutive weeks at US #1; reached UK #1 in
+    January 1978. US release 4 February 1977, UK a week later.
 
 - id: buckingham-nicks-1973
   artist_id: buckingham-nicks
   title: Buckingham Nicks
-  release_date: 1973-09-01
-  release_precision: month
+  release_date: 1973-09-05
+  release_precision: day
   album_type: studio
   label: Polydor
   peak_position: "none"
-  source_ids: [wp-buckingham-nicks]
+  musicbrainz_id: 9dc4a7b2-61cc-318a-bc3f-cf054d0ecf8f
+  discogs_id: "119900"
+  source_ids: [wp-buckingham-nicks, mb-buckingham-nicks]
   notes: >
     A commercial failure that got the duo dropped by Polydor — and got
     them into Fleetwood Mac, after Mick Fleetwood heard "Frozen Love"
-    at Sound City.
+    at Sound City. Its 2025 reissue finally charted.

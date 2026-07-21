@@ -82,13 +82,15 @@
     Peter Green's serene instrumental becomes the band's only UK
     number-one single — an unlikely feat for a blues band.
   significance: major
-  source_ids: [wp-fleetwood-mac]
-  notes: Chart week spans late January and early February 1969.
+  source_ids: [wp-fleetwood-mac, wp-albatross]
+  notes: >
+    Released as a single in November 1968; spent one week at the top in
+    January 1969.
 
 - id: fleetwood-mac-peter-green-exit-1970
   event_type: MEMBER_EXIT
-  date: 1970-05-01
-  date_precision: month
+  date: 1970-05-20
+  date_precision: day
   artist_ids: [fleetwood-mac]
   person_ids: [peter-green]
   headline: Peter Green leaves Fleetwood Mac
@@ -103,15 +105,15 @@
 
 - id: fleetwood-mac-christine-mcvie-joins-1970
   event_type: MEMBER_JOIN
-  date: 1970-01-01
-  date_precision: year
+  date: 1970-08-01
+  date_precision: day
   artist_ids: [fleetwood-mac]
   person_ids: [christine-mcvie]
   headline: Christine McVie joins Fleetwood Mac
   description: >
     Having already played on Kiln House uncredited, Christine McVie —
     voted Britain's top female vocalist with Chicken Shack — makes it
-    official.
+    official, playing her first show as a member in New Orleans.
   significance: major
   source_ids: [wp-fleetwood-mac, wp-christine-mcvie]
 
@@ -166,13 +168,14 @@
 
 - id: fleetwood-mac-dave-walker-exit-1973
   event_type: MEMBER_EXIT
-  date: 1973-06-01
-  date_precision: month
+  date: 1973-01-01
+  date_precision: year
   artist_ids: [fleetwood-mac]
   person_ids: [dave-walker]
   headline: Dave Walker is asked to leave
   significance: minor
   source_ids: [wp-fleetwood-mac, wp-dave-walker]
+  notes: Mid-1973, during the Mystery to Me sessions.
 
 - id: fleetwood-mac-bob-weston-exit-1973
   event_type: MEMBER_EXIT
@@ -243,36 +246,41 @@
 
 - id: fleetwood-mac-1975-us-number-one-1976
   event_type: CHART_MILESTONE
-  date: 1976-09-01
-  date_precision: month
+  date: 1976-09-04
+  date_precision: day
   artist_ids: [fleetwood-mac]
   album_id: fleetwood-mac-1975
   headline: Fleetwood Mac reaches US #1 over a year after release
   significance: major
-  source_ids: [wp-fleetwood-mac]
+  source_ids: [wp-fleetwood-mac, wp-billboard-200-number-ones-1976]
 
 - id: rumours-us-number-one-1977
   event_type: CHART_MILESTONE
-  date: 1977-04-01
-  date_precision: month
+  date: 1977-04-02
+  date_precision: day
   artist_ids: [fleetwood-mac]
   album_id: rumours-1977
   headline: Rumours hits US #1 and stays there
   description: >
-    The album logs 31 weeks at the top of the Billboard 200 on its way
-    to becoming one of the best-selling records ever made.
+    The album logs 31 non-consecutive weeks at the top of the Billboard
+    200 on its way to becoming one of the best-selling records ever
+    made.
   significance: major
-  source_ids: [wp-rumours]
+  source_ids: [wp-rumours, wp-billboard-200-number-ones-1977]
 
 - id: dreams-us-number-one-1977
   event_type: CHART_MILESTONE
-  date: 1977-06-18
-  date_precision: day
+  date: 1977-06-01
+  date_precision: month
   artist_ids: [fleetwood-mac]
   album_id: rumours-1977
   headline: '"Dreams" becomes the band''s only US #1 single'
   significance: notable
   source_ids: [wp-rumours]
+  notes: >
+    The cited source dates the Hot 100 peak only to June 1977; commonly
+    given elsewhere as the chart of 18 June. Upgrade precision when a
+    Billboard citation is added.
 
 - id: rumours-grammy-album-of-the-year-1978
   event_type: AWARD
@@ -281,18 +289,25 @@
   artist_ids: [fleetwood-mac]
   album_id: rumours-1977
   headline: Rumours wins the Grammy for Album of the Year
+  description: >
+    At the 20th Annual Grammy Awards at the Shrine Auditorium in Los
+    Angeles, the award goes to the band with co-producers Ken Caillat
+    and Richard Dashut.
   significance: major
-  source_ids: [wp-rumours]
+  source_ids: [wp-rumours, wp-20th-grammy-awards]
 
 # ---- Later arcs (sparse for now) -------------------------------------
 
 - id: fleetwood-mac-buckingham-exit-1987
   event_type: MEMBER_EXIT
-  date: 1987-08-01
-  date_precision: month
+  date: 1987-08-08
+  date_precision: day
   artist_ids: [fleetwood-mac]
   person_ids: [lindsey-buckingham]
   headline: Lindsey Buckingham quits rather than tour Tango in the Night
+  description: >
+    He walks out the day after a band meeting at Christine McVie's
+    house on 7 August 1987.
   significance: major
   source_ids: [wp-fleetwood-mac, wp-lindsey-buckingham]
 
@@ -305,11 +320,14 @@
   headline: Stevie Nicks leaves Fleetwood Mac
   significance: major
   source_ids: [wp-fleetwood-mac, wp-stevie-nicks]
+  notes: >
+    Sources disagree: the band's article says 1991; her own article
+    ties the departure to the end of the Behind the Mask tour in 1990.
 
 - id: fleetwood-mac-the-dance-reunion-1997
   event_type: REUNION
-  date: 1997-05-01
-  date_precision: month
+  date: 1997-01-01
+  date_precision: year
   artist_ids: [fleetwood-mac]
   headline: The classic lineup reunites for The Dance
   description: >
@@ -348,14 +366,20 @@
   headline: Christine McVie rejoins after sixteen years away
   significance: notable
   source_ids: [wp-fleetwood-mac, wp-christine-mcvie]
+  notes: >
+    Announced onstage by Mick Fleetwood on 11 January 2014 and made
+    official two days later.
 
 - id: fleetwood-mac-buckingham-fired-2018
   event_type: MEMBER_EXIT
-  date: 2018-04-01
+  date: 2018-01-01
   date_precision: month
   artist_ids: [fleetwood-mac]
   person_ids: [lindsey-buckingham]
   headline: Lindsey Buckingham is fired from Fleetwood Mac
+  description: >
+    Dismissed following the band's MusiCares Person of the Year
+    performance in January 2018; the news becomes public that April.
   significance: major
   source_ids: [wp-fleetwood-mac, wp-lindsey-buckingham]
 
