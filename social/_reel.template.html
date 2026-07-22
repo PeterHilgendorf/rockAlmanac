@@ -212,6 +212,21 @@
   .foot .brand small{display:block;color:var(--paper-dim);letter-spacing:.12em;font-size:1.8cqh}
   .foot .mark{font-size:2cqh;letter-spacing:.28em;text-transform:uppercase;color:var(--paper-dim);opacity:.7;padding-left:.28em}
 
+  /* album-cover ticker: the discography as small thumbnails, the album
+     current as of this event lit up; advances as the reel plays */
+  .covers{display:flex;gap:1.2cqw;margin-top:3.5cqh;align-items:center}
+  .thumb{
+    flex:1 1 0;max-width:10cqw;aspect-ratio:1;
+    background-size:cover;background-position:center;
+    border-radius:2px;opacity:.26;filter:grayscale(.5) brightness(.85);
+    box-shadow:0 0 0 1px rgba(0,0,0,.4);
+    transition:opacity .5s ease, filter .5s ease, box-shadow .5s ease;
+  }
+  .thumb.on{
+    opacity:1;filter:none;
+    box-shadow:0 0 0 .35cqh var(--foil), 0 1cqh 2cqh rgba(0,0,0,.5);
+  }
+
   /* entrance animation (staggered) */
   .anim{opacity:0;transform:translateY(14px)}
   .card.show .anim{opacity:1;transform:none;transition:opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1)}
@@ -313,6 +328,7 @@
         <div class="yearrule anim"></div>
         <p class="headline anim" id="headline">Peter Green forms Fleetwood Mac</p>
       </div>
+      <div class="covers anim" id="covers"></div>
       <div class="foot anim">
         <div class="brand">__TITLE__<small>__SUBTITLE__</small></div>
         <div class="mark">Rock Almanac</div>
@@ -369,6 +385,7 @@ function fmtHeadline(h){
 }
 
 const DATA = __DATA__;
+const COVERS = __COVERS__;
 
 let list = DATA.slice();
 let i = 0, playing=false, timer=null, majorsOnly=false;
@@ -397,6 +414,23 @@ function autofit(){
   }
 }
 
+function buildCovers(){
+  const c = el("covers"); c.innerHTML="";
+  if(!COVERS.length){ c.style.display="none"; return; }
+  COVERS.forEach(a=>{
+    const d=document.createElement("div");
+    d.className="thumb";
+    d.style.backgroundImage="url("+a.img+")";
+    d.title=a.t;
+    c.appendChild(d);
+  });
+}
+function paintCovers(ev){
+  // light up the album current as of this event's date
+  let cur=-1;
+  for(let k=0;k<COVERS.length;k++){ if(COVERS[k].d <= ev.d) cur=k; }
+  [...el("covers").children].forEach((t,idx)=>t.classList.toggle("on", idx===cur));
+}
 function buildScrub(){
   const s = el("scrub"); s.innerHTML="";
   list.forEach((ev,idx)=>{
@@ -429,6 +463,7 @@ function render(){
   el("headline").innerHTML=fmtHeadline(ev.h);
   el("count").textContent=String(i+1).padStart(2,"0")+" / "+String(list.length).padStart(2,"0");
   autofit();
+  paintCovers(ev);
   // restart entrance animation
   card.classList.remove("show"); void card.offsetWidth; card.classList.add("show");
   paintScrub();
@@ -469,6 +504,7 @@ document.addEventListener("keydown",e=>{
 const EXPORT = /[?&]export\b/.test(location.search);
 if(EXPORT){ document.body.classList.add("export"); }
 
+buildCovers();
 buildScrub();
 render();
 // refine the headline fit once layout and fonts are settled, and on resize

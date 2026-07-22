@@ -9,9 +9,16 @@ collection, `scripts/build_reel.py` fills it from
 `build/<collection>/timeline.json` and writes `<collection>-timeline.html`:
 
 ```
+python3 scripts/fetch_covers.py      # album covers -> assets/covers/ (once)
 python3 scripts/build_events.py      # produces build/<id>/timeline.json
 python3 scripts/build_reel.py        # fills the template per collection
 ```
+
+Each card carries an **album-cover ticker** along the bottom — the
+collection's discography as small thumbnails, with the album current as
+of that event lit up (it advances as the reel plays). Covers come from
+the Cover Art Archive (keyed to the stored MusicBrainz IDs) and are
+embedded as data URIs so the reel stays self-contained.
 
 | File | What it is |
 |---|---|

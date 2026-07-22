@@ -14,6 +14,7 @@ Usage:
   python3 scripts/build_reel.py the-runaways    # one collection
 """
 
+import base64
 import json
 import re
 import sys
@@ -26,6 +27,7 @@ TEMPLATE = ROOT / "social" / "_reel.template.html"
 BUILD = ROOT / "build"
 DATA = ROOT / "data"
 SOCIAL = ROOT / "social"
+COVERS = ROOT / "assets" / "covers"
 
 
 def entities(s):
@@ -44,11 +46,31 @@ def album_titles(collection_id):
     return sorted(set(titles), key=len, reverse=True)  # longest first for regex
 
 
+def collection_covers(collection_id):
+    """The collection's albums in date order, each with its release date
+    and a data-URI thumbnail (embedded so the reel stays self-contained).
+    Albums whose cover wasn't fetched are skipped."""
+    colls = {c["id"]: c for c in yaml.safe_load((DATA / "collections.yaml").read_text())}
+    artist_ids = set(colls[collection_id]["artist_ids"])
+    rows = []
+    for a in yaml.safe_load((DATA / "albums.yaml").read_text()):
+        if a.get("artist_id") not in artist_ids:
+            continue
+        img = COVERS / ("%s.jpg" % a["id"])
+        if not img.exists():
+            continue
+        b64 = base64.b64encode(img.read_bytes()).decode()
+        rows.append({"d": str(a["release_date"]), "t": a["title"],
+                     "img": "data:image/jpeg;base64," + b64})
+    rows.sort(key=lambda r: r["d"])
+    return rows
+
+
 def build(collection_id, template):
     tj = json.loads((BUILD / collection_id / "timeline.json").read_text())
     eras = {e["slug"]: {"label": e["label"], "accent": e["accent"], "ground": e["ground"]}
             for e in tj["eras"]}
-    data = [{"y": ev["year"], "w": ev["when"], "h": ev["headline"],
+    data = [{"y": ev["year"], "w": ev["when"], "h": ev["headline"], "d": ev["date"],
              "s": ev["significance"], "t": ev["event_type"], "e": ev["era"]}
             for ev in tj["events"]]
 
@@ -56,6 +78,7 @@ def build(collection_id, template):
     html = html.replace("__ERAS__", json.dumps(eras, ensure_ascii=True))
     html = html.replace("__DATA__", json.dumps(data, ensure_ascii=True, separators=(",", ":")))
     html = html.replace("__ALBUMS__", json.dumps(album_titles(collection_id), ensure_ascii=True))
+    html = html.replace("__COVERS__", json.dumps(collection_covers(collection_id), ensure_ascii=True, separators=(",", ":")))
     html = html.replace("__TITLE__", entities(tj["title"]))
     html = html.replace("__SUBTITLE__", entities(tj["subtitle"]))
 
