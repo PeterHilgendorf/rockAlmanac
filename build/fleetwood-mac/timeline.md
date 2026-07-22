@@ -9,8 +9,8 @@ Significance: ★ major · • notable · · minor
 
 - ★ **July 1967** — Peter Green forms Fleetwood Mac
 - • **13 August 1967** — Fleetwood Mac play their first show at the Windsor Festival
-- · **September 1967** — Bob Brunning steps aside for John McVie
 - • **September 1967** — John McVie joins the band that already bears his name
+- · **September 1967** — Bob Brunning steps aside for John McVie
 
 ## 1968
 
@@ -88,8 +88,8 @@ Significance: ★ major · • notable · · minor
 
 ## 1997
 
-- ★ **1997** — Buckingham and Nicks rejoin Fleetwood Mac
 - ★ **1997** — The classic lineup reunites for The Dance
+- ★ **1997** — Buckingham and Nicks rejoin Fleetwood Mac
 
 ## 1998
 

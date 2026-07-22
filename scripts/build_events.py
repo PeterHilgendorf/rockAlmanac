@@ -45,6 +45,21 @@ MONTHS = ["", "January", "February", "March", "April", "May", "June",
 SIG_MARK = {"major": "★", "notable": "•", "minor": "·"}
 GENERATED_TYPES = ("ALBUM_RELEASE", "TOUR_START", "TOUR_END")
 
+# Same-date ordering: on one date, beginnings come before endings, so a
+# tour starts before the band is mobbed on it and before a member leaves
+# it. Falls back to this before the alphabetical event_type tiebreak.
+EVENT_ORDER = {
+    "FORMATION": 0, "NAME_CHANGE": 1, "REUNION": 1,
+    "MEMBER_JOIN": 2, "MEMBER_RETURN": 2,
+    "LABEL_CHANGE": 3, "RECORDING_SESSION": 3,
+    "TOUR_START": 4, "ALBUM_RELEASE": 5, "SINGLE_RELEASE": 5,
+    "CONCERT": 6, "CHART_MILESTONE": 6, "AWARD": 6, "TV_APPEARANCE": 6,
+    "PRESS_MILESTONE": 6, "FILM": 6, "SIDE_PROJECT": 6, "MARRIAGE": 6,
+    "INCIDENT": 6, "ARREST": 6, "PERSONAL_EVENT": 6,
+    "HIATUS_START": 7, "TOUR_END": 7, "DIVORCE": 7,
+    "MEMBER_EXIT": 8, "BREAKUP": 9, "DEATH": 9,
+}
+
 
 def load(name):
     doc = yaml.safe_load((DATA_DIR / name).read_text())
@@ -120,7 +135,7 @@ def generate(albums, tours, names, albums_by_id):
 
 def sort_key(ev):
     return (iso(ev["date"]), PRECISIONS.index(ev["date_precision"]),
-            ev["event_type"], ev["id"])
+            EVENT_ORDER.get(ev["event_type"], 6), ev["event_type"], ev["id"])
 
 
 def format_date(value, precision):

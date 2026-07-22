@@ -17,9 +17,9 @@ Significance: ★ major · • notable · · minor
 ## 1977
 
 - · **January 1977** — The Runaways release Queens of Noise _(generated)_
-- • **June 1977** — Jackie Fox leaves the band after the Japan tour
-- ★ **June 1977** — The Runaways are mobbed like Beatlemania in Japan
 - · **June 1977** — The Runaways begin the Japan Tour _(generated)_
+- ★ **June 1977** — The Runaways are mobbed like Beatlemania in Japan
+- • **June 1977** — Jackie Fox leaves the band after the Japan tour
 - · **July 1977** — The Runaways release Live in Japan _(generated)_
 - ★ **August 1977** — Cherie Currie quits; Joan Jett takes over lead vocals
 - · **October 1977** — The Runaways release Waitin' for the Night _(generated)_

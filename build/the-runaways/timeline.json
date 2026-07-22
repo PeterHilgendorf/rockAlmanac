@@ -2,7 +2,7 @@
   "collection": "the-runaways",
   "title": "The Runaways",
   "subtitle": "1975 – 1979",
-  "generated_at": "2026-07-21",
+  "generated_at": "2026-07-22",
   "eras": [
     {
       "slug": "assembly",
@@ -87,14 +87,14 @@
       "era_label": "Queens of Noise"
     },
     {
-      "id": "the-runaways-fox-exit-1977",
+      "id": "tour-start-japan-tour-1977",
       "date": "1977-06-01",
       "year": 1977,
       "when": "June 1977",
-      "event_type": "MEMBER_EXIT",
-      "headline": "Jackie Fox leaves the band after the Japan tour",
-      "significance": "notable",
-      "generated": false,
+      "event_type": "TOUR_START",
+      "headline": "The Runaways begin the Japan Tour",
+      "significance": "minor",
+      "generated": true,
       "era": "ascent",
       "era_label": "Queens of Noise"
     },
@@ -111,14 +111,14 @@
       "era_label": "Queens of Noise"
     },
     {
-      "id": "tour-start-japan-tour-1977",
+      "id": "the-runaways-fox-exit-1977",
       "date": "1977-06-01",
       "year": 1977,
       "when": "June 1977",
-      "event_type": "TOUR_START",
-      "headline": "The Runaways begin the Japan Tour",
-      "significance": "minor",
-      "generated": true,
+      "event_type": "MEMBER_EXIT",
+      "headline": "Jackie Fox leaves the band after the Japan tour",
+      "significance": "notable",
+      "generated": false,
       "era": "ascent",
       "era_label": "Queens of Noise"
     },

@@ -222,6 +222,8 @@
     box-shadow:0 0 0 1px rgba(0,0,0,.4);
     transition:opacity .5s ease, filter .5s ease, box-shadow .5s ease;
   }
+  /* once an album has been reached it stays lit — never dims again */
+  .thumb.seen{opacity:1;filter:none}
   .thumb.on{
     opacity:1;filter:none;
     box-shadow:0 0 0 .35cqh var(--foil), 0 1cqh 2cqh rgba(0,0,0,.5);
@@ -426,10 +428,13 @@ function buildCovers(){
   });
 }
 function paintCovers(ev){
-  // light up the album current as of this event's date
+  // every album released by this date stays lit; the newest gets the ring
   let cur=-1;
   for(let k=0;k<COVERS.length;k++){ if(COVERS[k].d <= ev.d) cur=k; }
-  [...el("covers").children].forEach((t,idx)=>t.classList.toggle("on", idx===cur));
+  [...el("covers").children].forEach((t,idx)=>{
+    t.classList.toggle("seen", idx<=cur);
+    t.classList.toggle("on", idx===cur);
+  });
 }
 function buildScrub(){
   const s = el("scrub"); s.innerHTML="";

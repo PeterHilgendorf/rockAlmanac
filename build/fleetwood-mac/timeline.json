@@ -2,7 +2,7 @@
   "collection": "fleetwood-mac",
   "title": "Fleetwood Mac",
   "subtitle": "1967 – 2022",
-  "generated_at": "2026-07-21",
+  "generated_at": "2026-07-22",
   "eras": [
     {
       "slug": "blues",
@@ -63,18 +63,6 @@
       "era_label": "The Blues Era"
     },
     {
-      "id": "fleetwood-mac-bob-brunning-exit-1967",
-      "date": "1967-09-01",
-      "year": 1967,
-      "when": "September 1967",
-      "event_type": "MEMBER_EXIT",
-      "headline": "Bob Brunning steps aside for John McVie",
-      "significance": "minor",
-      "generated": false,
-      "era": "blues",
-      "era_label": "The Blues Era"
-    },
-    {
       "id": "fleetwood-mac-john-mcvie-joins-1967",
       "date": "1967-09-01",
       "year": 1967,
@@ -82,6 +70,18 @@
       "event_type": "MEMBER_JOIN",
       "headline": "John McVie joins the band that already bears his name",
       "significance": "notable",
+      "generated": false,
+      "era": "blues",
+      "era_label": "The Blues Era"
+    },
+    {
+      "id": "fleetwood-mac-bob-brunning-exit-1967",
+      "date": "1967-09-01",
+      "year": 1967,
+      "when": "September 1967",
+      "event_type": "MEMBER_EXIT",
+      "headline": "Bob Brunning steps aside for John McVie",
+      "significance": "minor",
       "generated": false,
       "era": "blues",
       "era_label": "The Blues Era"
@@ -507,24 +507,24 @@
       "era_label": "The Legacy Years"
     },
     {
-      "id": "fleetwood-mac-buckingham-nicks-return-1997",
-      "date": "1997-01-01",
-      "year": 1997,
-      "when": "1997",
-      "event_type": "MEMBER_RETURN",
-      "headline": "Buckingham and Nicks rejoin Fleetwood Mac",
-      "significance": "major",
-      "generated": false,
-      "era": "legacy",
-      "era_label": "The Legacy Years"
-    },
-    {
       "id": "fleetwood-mac-the-dance-reunion-1997",
       "date": "1997-01-01",
       "year": 1997,
       "when": "1997",
       "event_type": "REUNION",
       "headline": "The classic lineup reunites for The Dance",
+      "significance": "major",
+      "generated": false,
+      "era": "legacy",
+      "era_label": "The Legacy Years"
+    },
+    {
+      "id": "fleetwood-mac-buckingham-nicks-return-1997",
+      "date": "1997-01-01",
+      "year": 1997,
+      "when": "1997",
+      "event_type": "MEMBER_RETURN",
+      "headline": "Buckingham and Nicks rejoin Fleetwood Mac",
       "significance": "major",
       "generated": false,
       "era": "legacy",
