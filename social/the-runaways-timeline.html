@@ -129,29 +129,37 @@
     padding:8cqh 8cqw 6cqh;
   }
 
-  /* eyebrow: era + kind */
+  /* eyebrow: era over kind, stacked so long labels never collide */
   .eyebrow{
-    display:flex;align-items:center;gap:2.4cqw;
+    display:flex;flex-direction:column;align-items:flex-start;gap:1cqh;
     font-family:var(--geo);
     text-transform:uppercase;
   }
   .era{
-    font-size:2.5cqh;
-    letter-spacing:.24em;
+    font-size:2.8cqh;
+    letter-spacing:.2em;
+    line-height:1.15;
     color:var(--accent);
     font-weight:600;
-    padding-left:.24em;
+    padding-left:.2em;
   }
-  .eyebrow .dot{width:.5cqh;height:.5cqh;min-width:3px;min-height:3px;border-radius:50%;background:var(--foil-deep)}
   .kind{
-    font-size:2.5cqh;
+    font-size:2.3cqh;
     letter-spacing:.22em;
     color:var(--paper-dim);
     font-weight:500;
     padding-left:.22em;
   }
 
-  .spacer{flex:1}
+  /* the middle block owns the space between eyebrow and foot; the
+     headline shrinks to fit inside it, so nothing ever clips */
+  .mid{
+    flex:1 1 0;min-height:0;
+    display:flex;flex-direction:column;
+  }
+  /* fixed pieces keep their size; only the headline flexes, so its box
+     height is stable and autofit converges */
+  .when, .year, .yearrule{flex:none}
 
   .when{
     font-family:var(--geo);
@@ -178,6 +186,7 @@
     background:linear-gradient(90deg,var(--foil),var(--foil-deep) 70%,transparent);
   }
   .headline{
+    flex:1 1 0;min-height:0;overflow:hidden;   /* definite box; autofit fits font to it */
     font-family:var(--serif);
     font-weight:400;
     font-size:7.4cqh;
@@ -190,21 +199,18 @@
   .headline em{font-style:italic;color:var(--foil)}
 
   .foot{
-    display:flex;align-items:center;justify-content:space-between;gap:2cqw;
+    display:flex;align-items:flex-end;justify-content:space-between;gap:2cqw;
     margin-top:5cqh;
     padding-top:3cqh;
     border-top:1px solid rgba(216,177,101,.2);
     font-family:var(--geo);
   }
-  .sig{display:flex;align-items:center;gap:2cqw}
-  .sig svg{width:4.4cqh;height:4.4cqh;display:block;filter:drop-shadow(0 0 6px rgba(216,177,101,.35))}
-  .sig .lbl{font-size:2.2cqh;letter-spacing:.2em;text-transform:uppercase;color:var(--paper-dim);padding-left:.2em}
   .foot .brand{
-    text-align:right;
-    font-size:2cqh;letter-spacing:.16em;text-transform:uppercase;color:var(--foil);
-    padding-left:.16em;line-height:1.5;
+    font-size:2.2cqh;letter-spacing:.18em;text-transform:uppercase;color:var(--foil);
+    padding-left:.18em;line-height:1.5;
   }
-  .foot .brand small{display:block;color:var(--paper-dim);letter-spacing:.1em;font-size:1.7cqh}
+  .foot .brand small{display:block;color:var(--paper-dim);letter-spacing:.12em;font-size:1.8cqh}
+  .foot .mark{font-size:2cqh;letter-spacing:.28em;text-transform:uppercase;color:var(--paper-dim);opacity:.7;padding-left:.28em}
 
   /* entrance animation (staggered) */
   .anim{opacity:0;transform:translateY(14px)}
@@ -265,6 +271,17 @@
   .count{font-size:12px;letter-spacing:.14em;color:var(--paper-dim);text-transform:uppercase;font-variant-numeric:tabular-nums;white-space:nowrap}
   .hint{text-align:center;font-size:11px;letter-spacing:.1em;color:#6f685c;text-transform:uppercase;padding-bottom:8px}
 
+  /* export mode (?export): hide chrome, card fills the frame for clean
+     screen-recording or 1080x1920 capture */
+  body.export{justify-content:center}
+  body.export .topbar, body.export .controls{display:none}
+  body.export .stage{padding:0;flex:none}
+  body.export .card{
+    height:min(100vh, calc(100vw * 16 / 9));
+    width:auto;max-width:100vw;      /* aspect-ratio 9/16 derives the width */
+    border-radius:0;box-shadow:none;
+  }
+
   @media (max-width:520px){
     :root{--card-w:min(92vw, calc(72vh * 9 / 16))}
     .wordmark{letter-spacing:.32em}
@@ -288,17 +305,17 @@
     <div class="inner">
       <div class="eyebrow anim">
         <span class="era" id="era">The Blues Era</span>
-        <span class="dot"></span>
         <span class="kind" id="kind">Formation</span>
       </div>
-      <div class="spacer"></div>
-      <div class="when anim" id="when">July 1967</div>
-      <h1 class="year anim" id="year">1967</h1>
-      <div class="yearrule anim"></div>
-      <p class="headline anim" id="headline">Peter Green forms Fleetwood Mac</p>
+      <div class="mid">
+        <div class="when anim" id="when">July</div>
+        <h1 class="year anim" id="year">1967</h1>
+        <div class="yearrule anim"></div>
+        <p class="headline anim" id="headline">Peter Green forms Fleetwood Mac</p>
+      </div>
       <div class="foot anim">
-        <div class="sig"><span id="sigmark"></span><span class="lbl" id="siglbl">Major</span></div>
-        <div class="brand">The Runaways<small>1975 &#8211; 1979 &#183; every date sourced</small></div>
+        <div class="brand">The Runaways<small>1975 &#8211; 1979</small></div>
+        <div class="mark">Rock Almanac</div>
       </div>
     </div>
   </article>
@@ -366,12 +383,15 @@ const inner = document.querySelector(".inner");
 function autofit(){
   const h = el("headline");
   const H = card.clientHeight;
-  let px = H * 0.074;              // 7.4cqh baseline
-  const min = H * 0.046;
+  if(H < 50){ h.style.fontSize = ""; return; }  // not laid out yet — use CSS size
+  let px = H * 0.074;             // 7.4cqh baseline
+  const min = H * 0.032;
   h.style.fontSize = px + "px";
+  // The headline has a definite (flex-grown) box, so its clientHeight is
+  // stable as the font changes — shrink the font until the text fits it.
   let guard = 0;
-  while(inner.scrollHeight > H && px > min && guard < 60){
-    px -= H * 0.0025;
+  while(h.scrollHeight > h.clientHeight + 2 && px > min && guard < 120){
+    px -= H * 0.002;
     h.style.fontSize = px + "px";
     guard++;
   }
@@ -400,11 +420,13 @@ function render(){
   card.style.background=era.ground;
   el("era").textContent=era.label;
   el("kind").textContent=KIND[ev.t]||ev.t;
-  el("when").textContent=ev.w;
+  // small date drops the year (the big number already carries it); a
+  // year-precision event leaves nothing, so the line hides itself.
+  const smallWhen = ev.w.replace(/\s*\b\d{4}\b\s*/, "").trim();
+  el("when").textContent = smallWhen;
+  el("when").style.display = smallWhen ? "" : "none";
   el("year").textContent=ev.y;
   el("headline").innerHTML=fmtHeadline(ev.h);
-  el("sigmark").innerHTML=sigMark(ev.s);
-  el("siglbl").textContent=SIG[ev.s];
   el("count").textContent=String(i+1).padStart(2,"0")+" / "+String(list.length).padStart(2,"0");
   autofit();
   // restart entrance animation
@@ -442,6 +464,16 @@ document.addEventListener("keydown",e=>{
   else if(e.code==="ArrowLeft"){prev();}
 });
 
+// export mode: ?export hides the chrome and fills the frame, and starts
+// playing, for clean screen-recording or frame capture at 1080x1920.
+const EXPORT = /[?&]export\b/.test(location.search);
+if(EXPORT){ document.body.classList.add("export"); }
+
 buildScrub();
 render();
+// refine the headline fit once layout and fonts are settled, and on resize
+requestAnimationFrame(()=>autofit());
+window.addEventListener("load", autofit);
+window.addEventListener("resize", autofit);
+if(EXPORT){ play(); }
 </script>
